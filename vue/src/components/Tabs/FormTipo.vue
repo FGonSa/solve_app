@@ -5,13 +5,15 @@
                 >Tipo de Incidente</label
             >
             <div class="col">
-
-                    <div v-for="tipo in tipus" :key="tipo.id">
-
-                            {{ tipo.descripcio }}
-
-                    </div>
-
+                <select class="form-select">
+                    <option
+                        v-for="tipo in tipus"
+                        :value="tipo.id"
+                        :key="tipo.id"
+                    >
+                        {{ tipo.descripcio }}
+                    </option>
+                </select>
             </div>
         </div>
         <div class="col-12"></div>
@@ -24,7 +26,7 @@ import EventService from "../../services/EventService.js";
 export default {
     data() {
         return {
-            tipus: null
+            tipus: null,
         };
     },
     created() {
@@ -34,7 +36,6 @@ export default {
 
                 JSON.parse(JSON.stringify(this.tipus));
                 console.log(this.tipus);
-
             })
             .catch((error) => {
                 console.log(error);
