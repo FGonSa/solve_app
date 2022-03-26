@@ -14,6 +14,8 @@
                         {{ tipo.descripcio }}
                     </option>
                 </select>
+
+
             </div>
         </div>
         <div class="col-12"></div>

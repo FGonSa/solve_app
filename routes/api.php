@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\IncidentsController;
 use App\Http\Controllers\Api\TipusIncidentsControllerApi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,3 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('tipus_incidents', TipusIncidentsControllerApi::class);
+Route::apiResource('incidents', IncidentsController::class);
