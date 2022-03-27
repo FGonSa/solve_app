@@ -59,14 +59,30 @@
                 <label for="validationCustom01" class="form-label titulo"
                     >Provincia</label
                 >
-                <input type="password" class="form-control" name="pswd" />
+                <select class="form-select">
+                    <option
+                        v-for="provincia in provincias"
+                        :value="provincia.id"
+                        :key="provincia.id"
+                    >
+                        {{ provincia.nom }}
+                    </option>
+                </select>
             </div>
 
             <div class="col">
                 <label for="validationCustom01" class="form-label titulo"
                     >Municipio</label
                 >
-                <input type="password" class="form-control" name="pswd" />
+                <select class="form-select">
+                    <option
+                        v-for="municipio in municipios"
+                        :value="municipio.id"
+                        :key="municipio.id"
+                    >
+                        {{ municipio.nom }}
+                    </option>
+                </select>
             </div>
         </div>
 
@@ -204,7 +220,39 @@ municipios: null
 this.localizacion = null
     }
 
-  }
+  },
+   created() {
+        EventService.getComarcas()
+            .then((response) => {
+                this.comarcas = response.data;
+
+                JSON.parse(JSON.stringify(this.comarcas));
+
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+            EventService.getProvincias()
+            .then((response) => {
+                this.provincias = response.data;
+
+                JSON.parse(JSON.stringify(this.provincias));
+
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+            EventService.getMunicipios()
+            .then((response) => {
+                this.municipios = response.data;
+
+                JSON.parse(JSON.stringify(this.municipios));
+
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    },
 }
 </script>
 

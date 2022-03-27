@@ -14,8 +14,22 @@
                         {{ tipo.descripcio }}
                     </option>
                 </select>
-
-
+            </div>
+        </div>
+              <div class="row py-5">
+            <label for="validationCustom01" class="form-label"
+                >Solicitar ayuda a Agencia:</label
+            >
+            <div class="col">
+                <select class="form-select">
+                    <option
+                        v-for="tipo in tipus"
+                        :value="tipo.id"
+                        :key="tipo.id"
+                    >
+                        {{ tipo.descripcio }}
+                    </option>
+                </select>
             </div>
         </div>
         <div class="col-12"></div>
@@ -29,6 +43,7 @@ export default {
     data() {
         return {
             tipus: null,
+            agencias: null
         };
     },
     created() {
@@ -38,6 +53,16 @@ export default {
 
                 JSON.parse(JSON.stringify(this.tipus));
                 console.log(this.tipus);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+             EventService.getAgencias()
+            .then((response) => {
+                this.agencias = response.data;
+
+                JSON.parse(JSON.stringify(this.agencias));
+
             })
             .catch((error) => {
                 console.log(error);
