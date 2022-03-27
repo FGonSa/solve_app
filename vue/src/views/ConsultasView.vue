@@ -3,17 +3,17 @@
     <div class="container">
        <div class="row">
     <div class="col-lg-9">
- <TabsWrapper  >
-        <Tab title="DATOS PRINCIPALES" ><FormConsultas class="card card-body"/></Tab>
-        <Tab title="LOCALIZACIÓN"><FormLocalizacion class="card card-body"/></Tab>
-        <Tab title="TIPIFICACIÓN"><FormTipo class="card card-body"/></Tab>
-        <Tab title="FINALIZACIÓN"><FormFinish class="card card-body"/></Tab>
-      </TabsWrapper>
+        <TabsWrapper  >
+            <Tab title="DATOS PRINCIPALES" ><FormConsultas class="card card-body"/></Tab>
+            <Tab title="LOCALIZACIÓN"><FormLocalizacion class="card card-body"/></Tab>
+            <Tab title="TIPIFICACIÓN"><FormTipo class="card card-body"/></Tab>
+            <Tab title="FINALIZACIÓN"><FormFinish class="card card-body"/></Tab>
+        </TabsWrapper>
     </div>
        <div class="col-lg-3">
-         <ModuloDatos />
-<ModuloExp  class="my-4"/>
-<ModuloMap  class="my-4"/>
+            <ModuloDatos />
+            <ModuloExp  class="my-4"/>
+            <ModuloMap  class="my-4"/>
     </div>
   </div>
 
