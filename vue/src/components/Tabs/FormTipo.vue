@@ -23,11 +23,11 @@
             <div class="col">
                 <select class="form-select">
                     <option
-                        v-for="tipo in tipus"
-                        :value="tipo.id"
-                        :key="tipo.id"
+                        v-for="agencia in agencias"
+                        :value="agencia.id"
+                        :key="agencia.id"
                     >
-                        {{ tipo.descripcio }}
+                        {{ agencia.nom }}
                     </option>
                 </select>
             </div>
