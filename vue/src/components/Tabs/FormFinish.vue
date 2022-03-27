@@ -6,13 +6,13 @@
        <select  class="form-select" v-model="relacion" >
   <option value="1" >Asociar expediente existente</option>
   <option value="2">Crear expediente nuevo con recomendación</option>
-  <option value="3">Crear expediente nuevo</option>
+  <option value="3" selected >Crear expediente nuevo</option>
 </select>
     </div>
   </div>
 
     <div class="col-12">
-      <button type="submit" class="btn btn-warning" disabled>Finalizar</button>
+      <button type="submit" class="btn btn-warning" >Finalizar</button>
     </div>
 
         <div class="col-12">
