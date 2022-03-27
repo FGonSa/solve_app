@@ -1,47 +1,68 @@
 <template>
-
-
-  <Sidebar />
-  <Navbar />
-  <div :style="{ 'margin-left': sidebarWidth }">
-    <router-view />
-  </div>
-
+	<div class="app">
+		<div class="class-sidebar">
+			<!-- Sidebar -->
+			<Sidebar />
+		</div>
+		<div class="class-main">
+			<!-- Navbar -->
+			<Navbar/>
+			<!-- Content -->
+			<router-view />
+		</div>
+	</div>
 </template>
 
-<script>
-
-import Navbar from "./components/Navbar.vue"
-import Sidebar from "./components/sidebar/Sidebar.vue";
-import { sidebarWidth } from "./components/sidebar/status.js";
-export default {
-  components: { Sidebar, Navbar },
-  setup() {
-    return { sidebarWidth };
-  },
-};
+<script setup>
+import Sidebar from './components/Sidebar.vue'
+import Navbar from './components/Navbar.vue'
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  background-color: #E5E5E5;
+<style lang="scss">
+:root {
+	--primary: #4ade80;
+	--primary-alt: #22c55e;
+	--grey: #64748b;
+	--dark: #1e293b;
+	--dark-alt: #334155;
+	--light: #f1f5f9;
+	--sidebar-width: 300px;
+	--color-rosa: #F15AA5;
+	--color-azul: #4D9CDF;
+	--color-amarillo: #FFE64E;
+	--color-rosa-fuerte: #f12189;
+	--color-azul-fuerte: #0088ff;
+	--color-amarillo-fuerte: #ffe11c;
+	--color-amarillo-visible: #eecc09;
 }
-
-nav {
-  padding: 30px;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+body {
+	background: var(--light);
 }
-
-nav a.router-link-exact-active {
-  color: #42b983;
+button {
+	cursor: pointer;
+	appearance: none;
+	border: none;
+	outline: none;
+	background: none;
+}
+.app {
+	display: flex;
+	main {
+		flex: 1 1 0;
+		padding: 2rem;
+		
+	}
+}
+.class-main{
+	width: 100%;
+	
+}
+.class-sidebar{
+	
 }
 </style>

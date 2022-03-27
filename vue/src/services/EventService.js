@@ -13,7 +13,7 @@ export default {
     getEvents(){
         return apiClient.get('tipus_incidents')
     },
-    getIncidents(id){
-
+    getComarcas(){
+        return apiClient.get('comarques')
     }
 }
