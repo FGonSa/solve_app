@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Agencia as ResourcesAgencia;
 use App\Models\Agencia;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,8 @@ class AgenciaController extends Controller
      */
     public function index()
     {
-        //
+        $agencia = Agencia::all();
+        return ResourcesAgencia::collection($agencia);
     }
 
     /**

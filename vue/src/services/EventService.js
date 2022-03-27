@@ -13,7 +13,16 @@ export default {
     getEvents(){
         return apiClient.get('tipus_incidents')
     },
-    getIncidents(id){
-
+    getComarcas(){
+        return apiClient.get('comarques')
+    },
+    getProvincias(){
+        return apiClient.get('provincies')
+    },
+    getMunicipios(){
+        return apiClient.get('municipis')
+    },
+    getAgencias(){
+        return apiClient.get('agencies')
     }
 }

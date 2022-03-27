@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Provincia as ResourcesProvincia;
 use App\Models\Provincia;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,8 @@ class ProvinciaController extends Controller
      */
     public function index()
     {
-        //
+        $provincia = Provincia::all();
+        return ResourcesProvincia::collection($provincia);
     }
 
     /**

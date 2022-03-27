@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Municipi;
 use App\Models\Municipio;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,8 @@ class MunicipioController extends Controller
      */
     public function index()
     {
-        //
+        $municipio = Municipio::all();
+        return Municipi::collection($municipio);
     }
 
     /**
