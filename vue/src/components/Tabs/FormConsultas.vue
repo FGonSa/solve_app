@@ -2,13 +2,14 @@
 <div class="container-fluid">
     <form class="row g-3 needs-validation">
         <div class="col-md-12">
-            <label for="validationCustom01" class="form-label">Teléfono</label>
+            <label for="validationCustom01" class="form-label" >Teléfono</label>
             <input
                 type="text"
                 class="form-control"
                 id="validationCustom01"
                 value=""
                 required
+                autofocus
             />
             <div class="valid-feedback">Correcto</div>
         </div>
@@ -73,6 +74,7 @@ Nombre completo:
 Relación con el incidente:
 Teléfono de contacto:
 Descripción del suceso:
+Comentario extra a añadir:
     </textarea
             >
             <div class="valid-feedback">Correcto</div>
