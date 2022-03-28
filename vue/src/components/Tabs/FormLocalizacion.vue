@@ -1,4 +1,7 @@
 <template>
+<div class="container-fluid">
+
+
     <form class="row g-3 needs-validation">
         <div class="row">
             <label for="validationCustom01" class="form-label"
@@ -200,6 +203,7 @@
 
         <div class="col-12"></div>
     </form>
+</div>
 </template>
 
 <script>
@@ -257,7 +261,7 @@ this.localizacion = null
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped>
 .titulo {
     text-align: left;
 }

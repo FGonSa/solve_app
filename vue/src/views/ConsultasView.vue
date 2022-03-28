@@ -1,24 +1,29 @@
 <template>
-  <h2 class="py-3">CARTA DE LLAMADA</h2>
-    <div class="container">
-       <div class="row">
-    <div class="col-lg-9">
-        <TabsWrapper  >
-            <Tab title="DATOS PRINCIPALES" ><FormConsultas class="card card-body"/></Tab>
-            <Tab title="LOCALIZACIÓN"><FormLocalizacion class="card card-body"/></Tab>
-            <Tab title="TIPIFICACIÓN"><FormTipo class="card card-body"/></Tab>
-            <Tab title="FINALIZACIÓN"><FormFinish class="card card-body"/></Tab>
-        </TabsWrapper>
+    <div class="container-fluid p-5">
+            <div class="row">
+                <div class="col-lg-8">
+                    <TabsWrapper >
+                        <Tab title="Datos Principales" activo="active">
+                            <FormConsultas class=""/>
+                        </Tab>
+                        <Tab title="Localización" active="active">
+                            <FormLocalizacion class=""/>
+                        </Tab>
+                        <Tab title="Tipificación" active="active">
+                            <FormTipo class=""/>
+                        </Tab>
+                        <Tab title="Finalización" active="active">
+                            <FormFinish class=""/>
+                        </Tab>
+                    </TabsWrapper>
+                </div>
+                <div class="col-lg-4">
+                    <ModuloDatos />
+                    <ModuloExp  class="my-4"/>
+                    <ModuloMap  class="my-4"/>
+                </div>
+            </div>
     </div>
-       <div class="col-lg-3">
-            <ModuloDatos />
-            <ModuloExp  class="my-4"/>
-            <ModuloMap  class="my-4"/>
-    </div>
-  </div>
-
-    </div>
-
 </template>
 
 <script>
@@ -77,3 +82,6 @@ export default {
 </script>
 
 
+<style lang="scss" scoped>
+
+</style>

@@ -1,4 +1,5 @@
 <template>
+<div class="container-fluid">
   <form class="row g-3 needs-validation">
   <div class="row">
     <label for="validationCustom01" class="form-label">Selecciona cómo cerrar la carta:</label>
@@ -18,6 +19,7 @@
         <div class="col-12">
     </div>
   </form>
+</div>
 </template>
 
 <script>
@@ -28,4 +30,6 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>
+<style lang="scss" scoped>
+
+</style>

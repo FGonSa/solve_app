@@ -17,10 +17,10 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .tab-content {
-  min-height: 400px;
-  padding: 20px;
-  border-radius: 5px;
+  /* min-height: 400px; */
+  /* padding: 20px; */
+  /* border-radius: 5px; */
 }
 </style>
