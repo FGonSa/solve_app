@@ -23,11 +23,13 @@
                     <label for="validationCustom01" class="form-label titulo"
                         >Incidente</label
                     >
-                    <select class="form-select">
+                    <select class="form-select" v-model="incidente">
                         <option
                             v-for="inci in incidents"
+
                             :value="inci.id"
                             :key="inci.id"
+
                         >
                             {{ inci.descripcio }}
                         </option>
