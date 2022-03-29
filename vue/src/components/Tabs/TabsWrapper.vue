@@ -2,7 +2,7 @@
     <div class="container-fluid contenedor-main-formulario mb-4">
         <div class="row tabs">
             <ul class="nav nav-pills flex-row tabs_header p-4">
-                <li v-for="title in tabTitles" :key="title" :class="{ selected: title == selectedTitle }" class="nav-item btn-individual-nav p-2" @click="selectedTitle = title">
+                <li v-for="title in tabTitles" :key="title" :class="{ selected: title == selectedTitle }" class="nav-item btn-individual-nav p-1 text-dark" @click="selectedTitle = title">
                     <a class="nav-link">{{ title }}</a>
                 </li>
             </ul>
@@ -36,7 +36,10 @@ export default {
     font-family: 'Poppins', sans-serif;
 }
 .nav-link{
-    
+    color: black;
+}
+.nav-link:hover{
+    color: grey;
 }
 .contenedor-main-formulario {
     background-color: white;
@@ -56,8 +59,20 @@ export default {
 
 .tabs_header li {
     cursor: pointer;
-    transition: 0.4s all ease-out;
+    transition: 0.35s all ease-out;
     list-style-type: none;
+    border-radius: 50px;
+}
+.tabs_header li:hover {
+    cursor: pointer;
+    transition: 0.35s all ease-out;
+    list-style-type: none;
+    border-radius: 50px;
+    opacity: 80%;
+}
+.tabs_header li.selected {
+    background-color: #ffe11c;
+    border-radius: 50px;
 }
 
 </style>

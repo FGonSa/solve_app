@@ -66,7 +66,7 @@
                 >Nota Comuna</label
             >
             <textarea
-                class="form-control bg-warning"
+                class="texto-notas form-control"
                 id="exampleFormControlTextarea1"
                 rows="6"
             >
@@ -91,4 +91,10 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>
+<style lang="scss" scoped>
+.texto-notas{
+    background-color: #ffe11c;
+    height: 180px;
+}
+
+</style>

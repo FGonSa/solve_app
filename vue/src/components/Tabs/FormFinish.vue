@@ -12,8 +12,8 @@
     </div>
   </div>
 
-    <div class="col-12">
-      <button type="submit" class="btn btn-warning" >Finalizar</button>
+    <div class="div-btn-fin col-12 d-flex justify-content-end">
+      <button type="submit" class="btn btn-dark" >Finalizar</button>
     </div>
 
         <div class="col-12">
@@ -31,5 +31,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-
+.div-btn-fin{
+    padding-top: 2rem;
+    padding-right: 2.1rem;
+}
 </style>
