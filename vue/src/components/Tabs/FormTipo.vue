@@ -6,7 +6,7 @@
                 >Tipo de Incidente</label
             >
             <div class="col">
-                <select class="form-select">
+                <select class="form-select" v-model="tipo_incidente">
                     <option
                         v-for="tipo in tipus"
                         :value="tipo.id"
@@ -17,9 +17,27 @@
                 </select>
             </div>
         </div>
+
+ <div class="row my-4">
+            <div class="col" v-if="tipo == 1">
+                <label for="validationCustom01" class="form-label titulo"
+                    >Incidente</label
+                >
+               <select class="form-select">
+                    <option
+                        v-for="inci in incidents"
+                        :value="inci.id"
+                        :key="inci.id"
+                    >
+                        {{ inci.nom }}
+                    </option>
+                </select>
+            </div>
+            </div>
+
               <div class="row py-5">
             <label for="validationCustom01" class="form-label"
-                >Solicitar ayuda a Agencia:</label
+                >Solicitar ayuda a Agencias:</label
             >
             <div class="col">
                 <select class="form-select">
@@ -31,7 +49,28 @@
                         {{ agencia.nom }}
                     </option>
                 </select>
+
+                 <select class="form-select my-3">
+                    <option
+                        v-for="agencia in agencias"
+                        :value="agencia.id"
+                        :key="agencia.id"
+                    >
+                        {{ agencia.nom }}
+                    </option>
+                </select>
+
+                <select class="form-select my-3">
+                    <option
+                        v-for="agencia in agencias"
+                        :value="agencia.id"
+                        :key="agencia.id"
+                    >
+                        {{ agencia.nom }}
+                    </option>
+                </select>
             </div>
+
         </div>
     </form>
 </div>
@@ -44,7 +83,11 @@ export default {
     data() {
         return {
             tipus: null,
+            tipo_incidente: null,
+            incidents: null,
+            incidente: null,
             agencias: null
+            agenciasSeleccionadas: null
         };
     },
     created() {
@@ -63,6 +106,13 @@ export default {
                 this.agencias = response.data;
 
                 JSON.parse(JSON.stringify(this.agencias));
+
+            })
+            EventService.getIncidents()
+            .then((response) => {
+                this.incidents = response.data;
+
+                JSON.parse(JSON.stringify(this.incidents));
 
             })
             .catch((error) => {
