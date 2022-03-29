@@ -24,7 +24,7 @@ export default {
 <style lang="scss" scoped>
 
 .carta-header{
-    background-color: grey;
+    background-color: #FFE64E;
     border-radius: 25px 25px 0px 0px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }

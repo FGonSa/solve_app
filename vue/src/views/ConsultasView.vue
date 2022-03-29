@@ -6,13 +6,13 @@
                         <Tab title="Datos Principales" activo="active">
                             <FormConsultas class=""/>
                         </Tab>
-                        <Tab title="Localización" active="active">
+                        <Tab title="Localización" activo="active">
                             <FormLocalizacion class=""/>
                         </Tab>
-                        <Tab title="Tipificación" active="active">
+                        <Tab title="Tipificación" activo="active">
                             <FormTipo class=""/>
                         </Tab>
-                        <Tab title="Finalización" active="active">
+                        <Tab title="Finalización" activo="active">
                             <FormFinish class=""/>
                         </Tab>
                     </TabsWrapper>
