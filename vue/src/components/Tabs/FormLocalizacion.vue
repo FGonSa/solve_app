@@ -5,7 +5,7 @@
     <form class="row g-3 needs-validation">
         <div class="row">
             <label for="validationCustom01" class="form-label"
-                >¿Sucede en Cataluña?</label
+                >¿Sucede fuera de Cataluña?</label
             >
             <div class="col">
                 <div class="form-check form-check-inline">
@@ -14,9 +14,9 @@
                         type="radio"
                         name="inlineRadioOptions"
                         id="inlineRadio1"
-                        value="true"
+                        value=1
                         checked
-                        v-model="picked"
+                        v-model="foraCat"
                         @click="cambiarLocation()"
                     />
                     <label class="form-check-label" for="inlineRadio1"
@@ -31,8 +31,8 @@
                         type="radio"
                         name="inlineRadioOptions"
                         id="inlineRadio2"
-                        value="false"
-                        v-model="picked"
+                        value=0
+                        v-model="foraCat"
                         @click="cambiarLocation()"
                     />
                     <label class="form-check-label" for="inlineRadio2"
@@ -43,11 +43,11 @@
         </div>
 
         <div class="row my-4">
-            <div class="col" v-if="picked == 'true'">
+            <div class="col" v-if="foraCat == 0">
                 <label for="validationCustom01" class="form-label titulo"
                     >Comarca</label
                 >
-               <select class="form-select">
+               <select class="form-select" v-model="comarcaSelect">
                     <option
                         v-for="comarca in comarcas"
                         :value="comarca.id"
@@ -62,7 +62,7 @@
                 <label for="validationCustom01" class="form-label titulo"
                     >Provincia</label
                 >
-                <select class="form-select">
+                <select class="form-select" v-model="provinciaSelect">
                     <option
                         v-for="provincia in provincias"
                         :value="provincia.id"
@@ -77,7 +77,7 @@
                 <label for="validationCustom01" class="form-label titulo"
                     >Municipio</label
                 >
-                <select class="form-select">
+                <select class="form-select" v-model="municipioSelect">
                     <option
                         v-for="municipio in municipios"
                         :value="municipio.id"
@@ -95,7 +95,7 @@
             >
             <div class="col">
                 <select
-                    v-if="picked == 'true'"
+                    v-if="foraCat == 0"
                     class="form-select"
                     v-model="localizacion"
                 >
@@ -195,6 +195,7 @@
                 >Otras referencias de la localización</label
             >
             <textarea
+
                 class="form-control"
                 id="exampleFormControlTextarea1"
                 rows="3"
@@ -212,11 +213,15 @@ export default {
   name: "Localizacion",
   data(){
 return {
-  picked: "true",
 localizacion: null,
 comarcas: null,
 provincias: null,
-municipios: null
+municipios: null,
+comarcaSelect: null,
+municipioSelect: null,
+provinciaSelect: null,
+foraCat: 0,
+otrasRef: null
 }
   },
   methods: {
