@@ -19,7 +19,7 @@
         </div>
 
  <div class="row my-4">
-            <div class="col" v-if="tipo == 1">
+            <div class="col" v-if="tipo_incidente == 1">
                 <label for="validationCustom01" class="form-label titulo"
                     >Incidente</label
                 >
@@ -29,7 +29,7 @@
                         :value="inci.id"
                         :key="inci.id"
                     >
-                        {{ inci.nom }}
+                        {{ inci.descripcio }}
                     </option>
                 </select>
             </div>
@@ -86,8 +86,8 @@ export default {
             tipo_incidente: null,
             incidents: null,
             incidente: null,
-            agencias: null
-            agenciasSeleccionadas: null
+            agencias: null,
+            agenciasSeleccionadas: null,
         };
     },
     created() {
