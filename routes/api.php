@@ -49,3 +49,5 @@ Route::apiResource('expedients', Expediente::class);
 Route::apiResource('estats_expedients', EstatExpedientsController::class);
 Route::apiResource('cartes_trucades', CartaTrucadaController::class);
 Route::apiResource('cartes_trucades_has_agencies', CartaHasAgenciaController::class);
+
+

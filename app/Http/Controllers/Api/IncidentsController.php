@@ -37,9 +37,15 @@ class IncidentsController extends Controller
      * @param  \App\Models\Incident  $incident
      * @return \Illuminate\Http\Response
      */
-    public function show(Incident $incident)
+    // public function show(Incident $incident)
+    // {
+    //     $incident = Incident::find($incident->id);
+    //     return new ResourcesIncident($incident);
+    // }
+
+    public function show($id)
     {
-        $incident = Incident::with('classes_incidents_id')->find($incident->id);
+        $incident = Incident::all()->where('classes_incidents_id', '=', $id);
         return new ResourcesIncident($incident);
     }
 

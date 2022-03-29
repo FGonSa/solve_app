@@ -25,7 +25,7 @@ export default {
     getAgencias(){
         return apiClient.get('agencies')
     },
-    getIncidents(){
-        return apiClient.get('incidents')
+    getIncidents(id){
+        return apiClient.get('/incidents/'+id)
     }
 }
