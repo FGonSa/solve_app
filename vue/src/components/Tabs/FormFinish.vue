@@ -11,13 +11,15 @@
 </select>
     </div>
   </div>
-
-    <div class="div-btn-fin col-12 d-flex justify-content-end">
-      <button type="submit" class="btn btn-dark" >Finalizar</button>
+    <div class="btn-margin-right d-flex justify-content-end mt-4">
+        <button type="submit" class="div-btn-fin-btn btn btn-dark mt-3">
+            <div class="d-flex align-content-center gap-2">
+                <span class="material-icons">check</span>
+                Enlazar
+            </div>
+        </button>
     </div>
 
-        <div class="col-12">
-    </div>
   </form>
 </div>
 </template>
@@ -34,5 +36,17 @@ export default {
 .div-btn-fin{
     padding-top: 2rem;
     padding-right: 2.1rem;
+    border-radius: 35px;
+}
+.div-btn-fin-btn{
+    border-radius: 35px;
+    transition: 0.2s all ease-out;
+}
+.div-btn-fin-btn:hover{
+    opacity: 70%;
+    transition: 0.2s all ease-out;
+}
+.btn-margin-right{
+    padding-right: 2rem;
 }
 </style>

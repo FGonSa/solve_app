@@ -6,7 +6,7 @@
   <div class="carta-body p-3">
     <h5 class="carta-title">Expediente (código)</h5>
     <p class="carta-text">No existe ningún expediente que coincida con los datos introducidos.</p>
-    <div class="d-flex justify-content-left mt-4"><a href="#" class="btn-enlazar btn btn-dark " disabled><div class="d-flex align-content-center gap-2"><span class="material-icons">compare_arrows</span>Enlazar</div></a></div>
+    <div class="d-flex justify-content-left mt-4"><a href="#" class="btn-enlazar btn btn-dark "><div class="d-flex align-content-center gap-2"><span class="material-icons">compare_arrows</span>Enlazar</div></a></div>
   </div>
 </div>
 </template>
@@ -32,6 +32,11 @@ export default {
     box-shadow:  0px 15px 14px 4px rgba(0,0,0,0.12);
 }
 .btn-enlazar{
-    border-radius: 25px
+    border-radius: 25px;
+    transition: 0.2s all ease-out;
+}
+.btn-enlazar:hover{
+    opacity: 70%;
+    transition: 0.2s all ease-out;
 }
 </style>
