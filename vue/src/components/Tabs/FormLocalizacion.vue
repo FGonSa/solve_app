@@ -1,5 +1,5 @@
 <template>
-<div class="container-fluid">
+<div class="container-fluid mt-4">
 
 
     <form class="row g-3 needs-validation">
@@ -190,7 +190,15 @@
             </div>
         </div>
 
-        <div class="col">
+        <div class="col-md-12 mb-2">
+            <label class="form-label">Descripción</label>
+            <input  v-model="descripcion" type="text" class="form-control" required />
+        </div>
+        <div class="col-md-12 mb-2">
+            <label class="form-label">Detalle</label>
+            <input  v-model="detalle" type="text" class="form-control" required />
+        </div>
+        <div class="col mb-2">
             <label for="validationCustom01" class="form-label titulo"
                 >Otras referencias de la localización</label
             >
@@ -212,17 +220,19 @@ import EventService from "../../services/EventService.js";
 export default {
   name: "Localizacion",
   data(){
-return {
-localizacion: null,
-comarcas: null,
-provincias: null,
-municipios: null,
-comarcaSelect: null,
-municipioSelect: null,
-provinciaSelect: null,
-foraCat: 0,
-otrasRef: null
-}
+    return {
+    localizacion: null,
+    comarcas: null,
+    provincias: null,
+    municipios: null,
+    comarcaSelect: null,
+    municipioSelect: null,
+    provinciaSelect: null,
+    foraCat: 0,
+    descripcion: null,
+    detalle: null,
+    otrasRef: null
+    }
   },
   methods: {
     cambiarLocation(){

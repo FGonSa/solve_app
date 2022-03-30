@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid">
+    <div class="container-fluid mt-4">
         <form class="row g-3 needs-validation">
             <div class="row">
                 <label for="validationCustom01" class="form-label"
