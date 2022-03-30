@@ -38,39 +38,13 @@
             </div>
 
             <div class="row py-5">
-                <label for="validationCustom01" class="form-label"
-                    >Solicitar ayuda a Agencias:</label
+                <label  class="form-label"
+                    >Agencias solicitadas:</label
                 >
+                <div v-if="agenciasSeleccionadas == null" style="color: red">Todavía no se ha seleccionado ninguna agencia en el mapa.</div>
+                <div v-else >{{ agenciasSeleccionadas}}</div>
                 <div class="col">
-                    <select class="form-select">
-                        <option
-                            v-for="agencia in agencias"
-                            :value="agencia.id"
-                            :key="agencia.id"
-                        >
-                            {{ agencia.nom }}
-                        </option>
-                    </select>
 
-                    <select class="form-select my-3">
-                        <option
-                            v-for="agencia in agencias"
-                            :value="agencia.id"
-                            :key="agencia.id"
-                        >
-                            {{ agencia.nom }}
-                        </option>
-                    </select>
-
-                    <select class="form-select my-3">
-                        <option
-                            v-for="agencia in agencias"
-                            :value="agencia.id"
-                            :key="agencia.id"
-                        >
-                            {{ agencia.nom }}
-                        </option>
-                    </select>
                 </div>
             </div>
         </form>
@@ -88,7 +62,7 @@ export default {
             incidents: null,
             incidente: null,
             agencias: null,
-            agenciasSeleccionadas: null,
+            agenciasSeleccionadas: null
         };
     },
     created() {

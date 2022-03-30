@@ -3,7 +3,7 @@
         <form class="row g-3 needs-validation">
             <div class="col-lg-6">
                 <label class="form-label">Nombre</label>
-                <input v-model="nombreTrucada" type="text" class="form-control" required />
+                <input v-model="nombreTrucada" type="text" class="form-control" autofocus required />
             </div>
             <div class="col-lg-6">
                 <label class="form-label" >Teléfono</label>
@@ -18,7 +18,7 @@
             </div>
             <div class="col-lg-12">
                 <label for="validationCustom01" class="form-label titulo">Municipio</label>
-                <select class="form-select" v-model="municipioSelect">
+                <select class="form-select" v-model="municipioSeleccionado">
                     <option
                         v-for="municipio in municipioTrucada"
                         :value="municipio.id"
@@ -48,7 +48,7 @@
             </div>
             <div class="col-md-12">
                 <label class="form-label">Información relevante</label>
-                <input  v-model="infoRelevante" type="text" class="form-control" required />
+                <textarea  v-model="infoRelevante" type="text" class="form-control" required />
             </div>
             <div class="col-12"></div>
         </form>
@@ -66,9 +66,10 @@ export default {
             origenTrucada: null,
             nombreTrucada: null,
             municipioTrucada: null,
+            municipioSeleccionado: null,
             direccionTrucada: null,
             infoRelevante: null,
-            notaComuna: null,
+
         };
     },
 

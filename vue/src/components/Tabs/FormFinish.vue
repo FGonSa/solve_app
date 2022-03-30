@@ -26,7 +26,7 @@
                 <button type="submit" class="div-btn-fin-btn btn btn-dark mt-3">
                     <div class="d-flex align-content-center gap-2">
                         <span class="material-icons">check</span>
-                        Enlazar
+                        Terminar
                     </div>
                 </button>
             </div>
@@ -38,7 +38,7 @@
 export default {
   name: "Finalización",
   relacion: null,
-  notaComuna
+  notaComuna: null
 };
 </script>
 
