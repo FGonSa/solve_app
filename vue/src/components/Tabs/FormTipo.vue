@@ -41,7 +41,7 @@
                 <label  class="form-label"
                     >Agencias solicitadas:</label
                 >
-                <div v-if="agenciasSeleccionadas == null" style="color: red">Todavía no se ha seleccionado ninguna agencia en el mapa.</div>
+                <div v-if="agenciasSeleccionadas == null" style="color: red" class="d-flex align-items-center gap-2"><span class="material-icons">report_problem</span>Todavía no se ha seleccionado ninguna agencia en el mapa.</div>
                 <div v-else >{{ agenciasSeleccionadas}}</div>
                 <div class="col">
 

@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 const apiClient = axios.create({
-    baseURL: 'http://localhost/proyecto112/public/api/',
-    // baseURL: 'http://localhost:8080/proyecto112/public/api/',
+    // baseURL: 'http://localhost/proyecto112/public/api/',
+    baseURL: 'http://localhost:8080/proyecto112/public/api/',
     withCredentials: false,
     headers: {
         Accept: 'application/json',
@@ -11,22 +11,25 @@ const apiClient = axios.create({
 })
 
 export default {
-    getEvents(){
-        return apiClient.get('tipus_incidents')
+    getEvents() {
+        return apiClient.get("tipus_incidents");
     },
-    getComarcas(){
-        return apiClient.get('comarques')
+    getComarcas() {
+        return apiClient.get("comarques");
     },
-    getProvincias(){
-        return apiClient.get('provincies')
+    getProvincias() {
+        return apiClient.get("provincies");
     },
-    getMunicipios(){
-        return apiClient.get('municipis')
+    getMunicipios() {
+        return apiClient.get("municipis");
     },
-    getAgencias(){
-        return apiClient.get('agencies')
+    getAgencias() {
+        return apiClient.get("agencies");
     },
-    getIncidents(){
-        return apiClient.get('incidents')
-    }
-}
+    getIncidents() {
+        return apiClient.get("incidents");
+    },
+    getEstado(){
+        return apiClient.get("estats_expedients");
+    },
+};

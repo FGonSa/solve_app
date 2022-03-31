@@ -27,6 +27,7 @@ import Navbar from './components/Navbar.vue'
 	--dark-alt: #334155;
 	--light: #f1f5f9;
 	--sidebar-width: 300px;
+    --color-dark: #393939;
 	--color-rosa: #F15AA5;
 	--color-azul: #4D9CDF;
 	--color-amarillo: #FFE64E;
@@ -55,14 +56,14 @@ button {
 	main {
 		flex: 1 1 0;
 		padding: 2rem;
-		
+
 	}
 }
 .class-main{
 	width: 100%;
-	
+
 }
 .class-sidebar{
-	
+
 }
 </style>

@@ -7,7 +7,7 @@ background: linear-gradient(0deg, rgba(255,219,0,1) 0%, rgba(255,227,57,1) 49%, 
 				<ContainerAjustes imagen="/public/assets/gestion-expedientes.png" titulo="Gestionar Expedientes" url="/expediente/gestion" color="background: rgb(255,219,0);
 background: linear-gradient(0deg, rgba(255,219,0,1) 0%, rgba(255,227,57,1) 49%, rgba(255,233,96,1) 100%);" color-letter="#665a11"/>
 			</div>
-		</div>		
+		</div>
 	</main>
 </template>
 <script setup>

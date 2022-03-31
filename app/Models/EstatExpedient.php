@@ -9,7 +9,7 @@ class EstatExpedient extends Model
 {
     use HasFactory;
 
-    protected $table = 'expedients';
+    protected $table = 'estats_expedients';
     //Por defecto ya vienen estos valores
     // protected $primary_key = 'id';
     // public $incrementing = true;
@@ -17,6 +17,6 @@ class EstatExpedient extends Model
 
     public function expedients()
     {
-        return $this->hasMany(Expedient::class, 'id');
+        return $this->hasMany(Expedient::class, 'estats_expedients_id');
     }
 }

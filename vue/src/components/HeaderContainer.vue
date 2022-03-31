@@ -17,7 +17,7 @@
 }
 .contenedor-header{
     background: rgb(185,47,115);
-    background: linear-gradient(0deg, rgba(185,47,115,1) 0%, var(--color-rosa) 45%, rgba(247,111,178,1) 100%); 
+    background: linear-gradient(0deg, rgba(185,47,115,1) 0%, var(--color-rosa) 45%, rgba(247,111,178,1) 100%);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 25px;
     display: flex;
@@ -44,5 +44,8 @@ img{
 }
 h1{
     color: white;
+}
+h3{
+    color: var(--color-dark);
 }
 </style>

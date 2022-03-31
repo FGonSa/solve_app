@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\EstadoExpediente as EstadoExpedienteResources;
 use App\Models\EstatExpedient;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,10 @@ class EstatExpedientsController extends Controller
      */
     public function index()
     {
-        //
+        //models
+        $estatExpedient = EstatExpedient::all();
+        //resourses
+        return EstadoExpedienteResources::collection($estatExpedient);
     }
 
     /**
