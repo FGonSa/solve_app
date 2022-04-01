@@ -14,8 +14,9 @@
                             id="inlineRadio1"
                             value="1"
                             checked
-                            v-model="foraCat"
+                            v-model="localizacion.foraCat"
                             @click="cambiarLocation()"
+                            @blur="getLocalizacion(datosPrincipales)"
                         />
                         <label class="form-check-label" for="inlineRadio1"
                             >Sí</label
@@ -30,8 +31,9 @@
                             name="inlineRadioOptions"
                             id="inlineRadio2"
                             value="0"
-                            v-model="foraCat"
+                            v-model="localizacion.foraCat"
                             @click="cambiarLocation()"
+                            @blur="getLocalizacion(datosPrincipales)"
                         />
                         <label class="form-check-label" for="inlineRadio2"
                             >No</label
@@ -41,13 +43,13 @@
             </div>
 
             <div class="row my-4">
-                <div class="col" v-if="foraCat == 0">
+                <div class="col" v-if="localizacion.foraCat == 0">
                     <label for="validationCustom01" class="form-label titulo"
                         >Comarca</label
                     >
-                    <select class="form-select" v-model="comarcaSelect">
+                    <select class="form-select" @blur="getLocalizacion(datosPrincipales)" v-model="localizacion.comarcaSelect">
                         <option
-                            v-for="comarca in comarcas"
+                            v-for="comarca in localizacion.comarcas"
                             :value="comarca.id"
                             :key="comarca.id"
                         >
@@ -60,9 +62,9 @@
                     <label for="validationCustom01" class="form-label titulo"
                         >Provincia</label
                     >
-                    <select class="form-select" v-model="provinciaSelect">
+                    <select class="form-select" @blur="getLocalizacion(datosPrincipales)" v-model="localizacion.provinciaSelect">
                         <option
-                            v-for="provincia in provincias"
+                            v-for="provincia in localizacion.provincias"
                             :value="provincia.id"
                             :key="provincia.id"
                         >
@@ -75,9 +77,9 @@
                     <label for="validationCustom01" class="form-label titulo"
                         >Municipio</label
                     >
-                    <select class="form-select" v-model="municipioSelect">
+                    <select class="form-select" @blur="getLocalizacion(datosPrincipales)" v-model="localizacion.municipioSelect">
                         <option
-                            v-for="municipio in municipios"
+                            v-for="municipio in localizacion.municipios"
                             :value="municipio.id"
                             :key="municipio.id"
                         >
@@ -93,9 +95,10 @@
                 >
                 <div class="col">
                     <select
-                        v-if="foraCat == 0"
+                        v-if="localizacion.foraCat == 0"
                         class="form-select"
-                        v-model="localizacion"
+                        v-model="localizacion.localizacion"
+                        @blur="getLocalizacion(datosPrincipales)"
                     >
                         <option selected value="1">Calle</option>
                         <option value="2">Punto Singular</option>
@@ -105,14 +108,14 @@
                     </select>
 
                     <div v-else class="col">
-                        <select class="form-select">
+                        <select class="form-select" v-model="localizacion.localizacion" @blur="getLocalizacion(datosPrincipales)">
                             <option value="5" selected>Provincia</option>
                         </select>
                     </div>
                 </div>
             </div>
 
-            <div class="row my-4" v-if="localizacion == 1">
+            <div class="row my-4" v-if="localizacion.localizacion == 1">
                 <div class="col">
                     <label for="validationCustom01" class="form-label titulo"
                         >Via</label
@@ -156,7 +159,7 @@
                 </div>
             </div>
 
-            <div class="row my-4" v-if="localizacion == 4">
+            <div class="row my-4" v-if="localizacion.localizacion == 4">
                 <div class="col">
                     <label for="validationCustom01" class="form-label titulo"
                         >Nombre</label
@@ -168,18 +171,18 @@
                     <label for="validationCustom01" class="form-label titulo"
                         >Km</label
                     >
-                    <input type="password" class="form-control" name="pswd" />
+                    <input type="text" class="form-control" name="pswd" />
                 </div>
 
                 <div class="col">
                     <label for="validationCustom01" class="form-label titulo"
                         >Sentido</label
                     >
-                    <input type="password" class="form-control" name="pswd" />
+                    <input type="text" class="form-control" name="pswd" />
                 </div>
             </div>
 
-            <div class="row my-4" v-if="localizacion == 2">
+            <div class="row my-4" v-if="localizacion.localizacion == 2">
                 <div class="col">
                     <label for="validationCustom01" class="form-label titulo"
                         >Nombre</label
@@ -191,7 +194,8 @@
             <div class="col-md-12 mb-2">
                 <label class="form-label">Descripción</label>
                 <input
-                    v-model="descripcion"
+                    @blur="getLocalizacion(datosPrincipales)"
+                    v-model="localizacion.descripcion"
                     type="text"
                     class="form-control"
                     required
@@ -200,7 +204,8 @@
             <div class="col-md-12 mb-2">
                 <label class="form-label">Detalle</label>
                 <input
-                    v-model="detalle"
+                    @blur="getLocalizacion(datosPrincipales)"
+                    v-model="localizacion.detalle"
                     type="text"
                     class="form-control"
                     required
@@ -211,7 +216,8 @@
                     >Otras referencias de la localización</label
                 >
                 <textarea
-                    v-model="otrasRef"
+                    @blur="getLocalizacion(datosPrincipales)"
+                    v-model="localizacion.otrasRef"
                     class="form-control"
                     id="exampleFormControlTextarea1"
                     rows="3"
@@ -229,48 +235,53 @@ export default {
     name: "Localizacion",
     data() {
         return {
-            localizacion: null,
-            comarcas: null,
-            provincias: null,
-            municipios: null,
-            comarcaSelect: null,
-            municipioSelect: null,
-            provinciaSelect: null,
-            foraCat: 0,
-            descripcion: null,
-            detalle: null,
-            otrasRef: null,
+            localizacion: {
+                localizacion: "",
+                comarcas: "",
+                provincias: "",
+                municipios: "",
+                comarcaSelect: null,
+                municipioSelect: null,
+                provinciaSelect: null,
+                foraCat: 0,
+                descripcion: "",
+                detalle: "",
+                otrasRef: "",
+            },
         };
     },
     methods: {
         cambiarLocation() {
-            this.localizacion = null;
+            this.localizacion.localizacion = null;
+        },
+        getLocalizacion(){
+            this.$emit("padre-datos-llamada", this.localizacion);
         },
     },
     created() {
         EventService.getComarcas()
             .then((response) => {
-                this.comarcas = response.data;
+                this.localizacion.comarcas = response.data;
 
-                JSON.parse(JSON.stringify(this.comarcas));
+                JSON.parse(JSON.stringify(this.localizacion.comarcas));
             })
             .catch((error) => {
                 console.log(error);
             });
         EventService.getProvincias()
             .then((response) => {
-                this.provincias = response.data;
+                this.localizacion.provincias = response.data;
 
-                JSON.parse(JSON.stringify(this.provincias));
+                JSON.parse(JSON.stringify(this.localizacion.provincias));
             })
             .catch((error) => {
                 console.log(error);
             });
         EventService.getMunicipios()
             .then((response) => {
-                this.municipios = response.data;
+                this.localizacion.municipios = response.data;
 
-                JSON.parse(JSON.stringify(this.municipios));
+                JSON.parse(JSON.stringify(this.localizacion.municipios));
             })
             .catch((error) => {
                 console.log(error);

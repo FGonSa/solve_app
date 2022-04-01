@@ -3,12 +3,13 @@
         <form class="row g-3 needs-validation">
             <div class="col-lg-6">
                 <label class="form-label">Nombre</label>
-                <input v-model="nombreTrucada" type="text" class="form-control" autofocus required />
+                <input @blur="getDatosPrincipales(datosPrincipales)" v-model="datosPrincipales.nom_trucada" type="text" class="form-control" autofocus required />
             </div>
             <div class="col-lg-6">
                 <label class="form-label" >Teléfono</label>
                 <input
-                v-model="telefono"
+                    @blur="getDatosPrincipales(datosPrincipales)"
+                    v-model="datosPrincipales.telefono"
                     type="text"
                     class="form-control"
                     id="validationCustom01"
@@ -18,37 +19,26 @@
             </div>
             <div class="col-lg-12">
                 <label for="validationCustom01" class="form-label titulo">Municipio</label>
-                <select class="form-select" v-model="municipioSeleccionado">
+                <select class="form-select" v-model="datosPrincipales.municipis_id_trucada" @blur="getDatosPrincipales(datosPrincipales)">
                     <option
-                        v-for="municipio in municipioTrucada"
+                        v-for="municipio in datosPrincipales.array_municipis_id_trucada"
                         :value="municipio.id"
-                        :key="municipio.id"
-                    >
+                        :key="municipio.id" >
                         {{ municipio.nom }}
                     </option>
                 </select>
             </div>
             <div class="col-lg-6">
                 <label class="form-label">Procedencia</label>
-                <input v-model="procedenciaTrucada" type="text" class="form-control" required />
+                <input @blur="getDatosPrincipales(datosPrincipales)" v-model="datosPrincipales.procedencia_trucada" type="text" class="form-control" required />
             </div>
             <div class="col-lg-6">
                 <label class="form-label">Origen</label>
-                <input v-model="origenTrucada" type="text" class="form-control" required />
+                <input @blur="getDatosPrincipales(datosPrincipales)" v-model="datosPrincipales.origen_trucada" type="text" class="form-control" required />
             </div>
-
-            <!-- <div class="col-md-12">
-                <label class="form-label">Municipio</label>
-                <input v-model="municipioTrucada" type="text" class="form-control" required />
-            </div> -->
-
             <div class="col-md-12">
                 <label class="form-label">Dirección</label>
-                <input v-model="direccionTrucada" type="text" class="form-control" required />
-            </div>
-            <div class="col-md-12">
-                <label class="form-label">Información relevante</label>
-                <textarea  v-model="infoRelevante" type="text" class="form-control" required />
+                <input @blur="getDatosPrincipales(datosPrincipales)" v-model="datosPrincipales.adreca_trucada" type="text" class="form-control" required />
             </div>
             <div class="col-12"></div>
         </form>
@@ -61,36 +51,32 @@ export default {
     name: "Datos Principales",
     data() {
         return {
-            telefono: null,
-            procedenciaTrucada: null,
-            origenTrucada: null,
-            nombreTrucada: null,
-            municipioTrucada: null,
-            municipioSeleccionado: null,
-            direccionTrucada: null,
-            infoRelevante: null,
-
+            datosPrincipales: {
+                nom_trucada: "",
+                telefono: "",
+                municipis_id_trucada: "",
+                array_municipis_id_trucada: "",
+                procedencia_trucada: "",
+                origen_trucada: "",
+                adreca_trucada: "",
+            },
         };
     },
-
-  methods: {
-    cambiarLocation(){
-this.localizacion = null
-    }
-
-  },
    created() {
-        EventService.getComarcas()
-            EventService.getMunicipios()
+        EventService.getMunicipios()
             .then((response) => {
-                this.municipioTrucada = response.data;
+                this.datosPrincipales.array_municipis_id_trucada = response.data;
 
-                JSON.parse(JSON.stringify(this.municipioTrucada));
-
+                JSON.parse(JSON.stringify(this.datosPrincipales.array_municipis_id_trucada));
             })
             .catch((error) => {
                 console.log(error);
             });
+    },
+    methods: {
+        getDatosPrincipales(){
+            this.$emit("padre-datos-llamada", this.datosPrincipales);
+        },
     },
 };
 </script>

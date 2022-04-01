@@ -3,17 +3,17 @@
             <div class="row">
                 <div class="col-lg-8">
                     <TabsWrapper >
-                        <Tab title="Datos Principales" activo="active">
-                            <FormConsultas class=""/>
+                        <Tab title="Datos Principales">
+                            <FormConsultas @padre-datos-llamada="getDatosPrincipales"/>
                         </Tab>
-                        <Tab title="Localización" activo="active">
-                            <FormLocalizacion class=""/>
+                        <Tab title="Localización">
+                            <FormLocalizacion @padre-datos-llamada="getLocalizacion"/>
                         </Tab>
-                        <Tab title="Tipificación" activo="active">
-                            <FormTipo class=""/>
+                        <Tab title="Tipificación">
+                            <FormTipo @padre-datos-llamada="getTipificacion"/>
                         </Tab>
-                        <Tab title="Finalización" activo="active">
-                            <FormFinish class=""/>
+                        <Tab title="Finalización">
+                            <FormFinish @padre-datos-llamada="getFinalizacion"/>
                         </Tab>
                     </TabsWrapper>
                 </div>
@@ -53,30 +53,59 @@ export default {
   },
   data(){
     return{
-    //   telefono: null,
-    //   procedencia: null,
-    //   municipio: null,
-    //   direccion: null,
-    //   infoRelevante: null,
-    //   notaComuna: null,
-    //   sucedeCat: null,
-    //   locaComarca: null,
-    //   locaProvincia: null,
-    //   locaMunicipio: null,
-    //   tipoLocalizacion:  null,
-    //   calleVia: null,
-    //   calleNombre: null,
-    //   calleNum: null,
-    //   calleEscalera: null,
-    //   callePiso: null,
-    //   callePuerta: null,
-    //   puntoSingularNombre: null,
-    //   carreteraNombre: null,
-    //   carreteraKm: null,
-    //   carreteraSentido: null,
-    //   otrasRef: null,
-
+    cartaLlamada: {
+        // datos principales
+        telefono: "",
+        nom_trucada: "",
+        municipis_id_trucada: null,
+        procedencia_trucada: "",
+        origen_trucada: "",
+        adreca_trucada: "",
+        // localizacion
+        fora_catalunya: 0,
+        provincies_id: "",
+        municipis_id: "",
+        comarca_id: "", //falta añadirlo a la BD
+        tipus_localitzacions_id: "",
+        descripcio_localitzacio: "",
+        detall_localitzacio: "",
+        altres_ref_localitzacio: "",
+        // tipificación
+        incidents_id: "",
+        tipus_incidents_descripcio: "", //falta añadirlo a la BD
+        //finalizacion
+        como_cerrar_carta: "", //¿ añadir a BD ?
+        nota_comuna: "",
+        }
     }
+  },
+  methods: {
+      getDatosPrincipales(datosPrincipales){
+        this.cartaLlamada.telefono = datosPrincipales.telefono;
+        this.cartaLlamada.nom_trucada = datosPrincipales.nom_trucada;
+        this.cartaLlamada.municipis_id_trucada = datosPrincipales.municipis_id_trucada;
+        this.cartaLlamada.procedencia_trucada = datosPrincipales.procedencia_trucada;
+        this.cartaLlamada.origen_trucada = datosPrincipales.origen_trucada;
+        this.cartaLlamada.adreca_trucada = datosPrincipales.adreca_trucada;
+      },
+      getLocalizacion(localizacion){
+        this.cartaLlamada.fora_catalunya = localizacion.foraCat;
+        this.cartaLlamada.provincies_id = localizacion.provinciaSelect;
+        this.cartaLlamada.municipis_id = localizacion.municipioSelect;
+        this.cartaLlamada.comarca_id = localizacion.comarcaSelect;
+        this.cartaLlamada.tipus_localitzacions_id = localizacion.localizacion;
+        this.cartaLlamada.descripcio_localitzacio = localizacion.descripcion;
+        this.cartaLlamada.detall_localitzacio = localizacion.detalle;
+        this.cartaLlamada.altres_ref_localitzacio = localizacion.otrasRef;
+      },
+      getTipificacion(tipificacion){
+        this.cartaLlamada.incidents_id = tipificacion.incidente;
+        this.cartaLlamada.tipus_incidents_descripcio = tipificacion.tipo_incidente;
+      },
+      getFinalizacion(finalizacion){
+        this.cartaLlamada.como_cerrar_carta = finalizacion.como_cerrar_carta;
+        this.cartaLlamada.nota_comuna = finalizacion.nota_comuna;
+      },
   }
 };
 </script>

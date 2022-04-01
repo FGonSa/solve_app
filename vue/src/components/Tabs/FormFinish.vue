@@ -4,19 +4,14 @@
             <div class="row">
                 <label for="validationCustom01" class="form-label">Selecciona cómo cerrar la carta:</label>
                 <div class="col">
-                <select  class="form-select" v-model="relacion" >
-                    <option value="1" >Asociar expediente existente</option>
-                    <option value="2">Crear expediente nuevo con recomendación</option>
-                    <option value="3" selected >Crear expediente nuevo</option>
+                <select  class="form-select" @blur="getFinalizacion(finalizacion)" v-model="finalizacion.como_cerrar_carta" >
+                    <option value="asociar_expediente" >Asociar expediente existente</option>
+                    <option value="crear_expediente_recomendado">Crear expediente nuevo con recomendación</option>
+                    <option value="crear_expediente_nuevo" selected >Crear expediente nuevo</option>
                 </select>
                 <div class="col-md-12 mt-3">
                     <label class="form-label">Nota Comuna</label>
-                    <textarea v-model="notaComuna" class="texto-notas form-control" rows="6">
-                        Nombre completo:
-                        Relación con el incidente:
-                        Teléfono de contacto:
-                        Descripción del suceso:
-                        Comentario extra a añadir:
+                    <textarea @blur="getFinalizacion(finalizacion)" v-model="finalizacion.nota_comuna" class="texto-notas form-control" rows="6">
                     </textarea>
                     <div class="valid-feedback">Correcto</div>
                 </div>
@@ -36,9 +31,19 @@
 
 <script>
 export default {
-  name: "Finalización",
-  relacion: null,
-  notaComuna: null
+  data() {
+        return {
+            finalizacion: {
+                como_cerrar_carta: null,
+                nota_comuna: "Relación con el incidente: \nDescripción del suceso: \nComentario extra a añadir:",
+            },
+        };
+    },
+    methods: {
+        getFinalizacion(){
+            this.$emit("padre-datos-llamada", this.finalizacion);
+        },
+    },
 };
 </script>
 
