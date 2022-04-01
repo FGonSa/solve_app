@@ -50,6 +50,7 @@ class CartaTrucadaController extends Controller
         $carta->descripcio_localitzacio = $request->input('descripcio_localitzacio');
         $carta->altres_ref_localitzacio = $request->input('altres_ref_localitzacio');
         $carta->incidents_id = $request->input('incidents_id');
+        $carta->tipus_incident = $request->input('tipus_incident');
         $carta->nota_comuna = $request->input('nota_comuna');
         $carta->expedients_id = $request->input('expedients_id');
         $carta->usuaris_id = $request->input('usuaris_id');
