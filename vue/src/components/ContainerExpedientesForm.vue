@@ -77,172 +77,6 @@
                             </div>
                         </td>
                     </tr>
-                    <tr>
-                        <th scope="row ">123456789</th>
-                        <td class="">
-                            <div class="d-flex justify-content-center gap-2">
-                                <div class="autor-img">
-                                    <img src="/public/assets/foto-perfil.png">
-                                </div>
-                                <div class="autor-nombre">
-                                    <div>NombreUser</div>
-                                    <div class="email-font">nombreuser@gmail.com</div>
-                                </div>
-                            </div>
-                        </td>
-                        <td>16/10/2022 - 08:15h</td>
-                        <td>17/10/2022 - 12:33h</td>
-                        <td><button class="btn-estado btn btn-success btn-sm">En Proceso</button></td>
-                        <td>
-                            <div class="d-flex justify-content-center gap-3">
-                                <div>
-                                    <button class="btn-mostrar btn btn-warning btn-sm d-flex align-items-center gap-1" data-bs-toggle="modal" data-bs-target="#exampleModal"><span class="material-icons">visibility</span>Mostrar</button>
-                                </div>
-                                <div>
-                                    <button class="btn-mostrar btn btn-danger btn-sm d-flex align-items-center gap-1"><span class="material-icons">delete_forever</span></button>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row ">123456789</th>
-                        <td class="">
-                            <div class="d-flex justify-content-center gap-2">
-                                <div class="autor-img">
-                                    <img src="/public/assets/foto-perfil.png">
-                                </div>
-                                <div class="autor-nombre">
-                                    <div>NombreUser</div>
-                                    <div class="email-font">nombreuser@gmail.com</div>
-                                </div>
-                            </div>
-                        </td>
-                        <td>16/10/2022 - 08:15h</td>
-                        <td>17/10/2022 - 12:33h</td>
-                        <td><button class="btn-estado btn btn-success btn-sm">En Proceso</button></td>
-                        <td>
-                            <div class="d-flex justify-content-center gap-3">
-                                <div>
-                                    <button class="btn-mostrar btn btn-warning btn-sm d-flex align-items-center gap-1" data-bs-toggle="modal" data-bs-target="#exampleModal"><span class="material-icons">visibility</span>Mostrar</button>
-                                </div>
-                                <div>
-                                    <button class="btn-mostrar btn btn-danger btn-sm d-flex align-items-center gap-1"><span class="material-icons">delete_forever</span></button>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row ">123456789</th>
-                        <td class="">
-                            <div class="d-flex justify-content-center gap-2">
-                                <div class="autor-img">
-                                    <img src="/public/assets/foto-perfil.png">
-                                </div>
-                                <div class="autor-nombre">
-                                    <div>NombreUser</div>
-                                    <div class="email-font">nombreuser@gmail.com</div>
-                                </div>
-                            </div>
-                        </td>
-                        <td>16/10/2022 - 08:15h</td>
-                        <td>17/10/2022 - 12:33h</td>
-                        <td><button class="btn-estado btn btn-success btn-sm">En Proceso</button></td>
-                        <td>
-                            <div class="d-flex justify-content-center gap-3">
-                                <div>
-                                    <button class="btn-mostrar btn btn-warning btn-sm d-flex align-items-center gap-1" data-bs-toggle="modal" data-bs-target="#exampleModal"><span class="material-icons">visibility</span>Mostrar</button>
-                                </div>
-                                <div>
-                                    <button class="btn-mostrar btn btn-danger btn-sm d-flex align-items-center gap-1"><span class="material-icons">delete_forever</span></button>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row ">123456789</th>
-                        <td class="">
-                            <div class="d-flex justify-content-center gap-2">
-                                <div class="autor-img">
-                                    <img src="/public/assets/foto-perfil.png">
-                                </div>
-                                <div class="autor-nombre">
-                                    <div>NombreUser</div>
-                                    <div class="email-font">nombreuser@gmail.com</div>
-                                </div>
-                            </div>
-                        </td>
-                        <td>16/10/2022 - 08:15h</td>
-                        <td>17/10/2022 - 12:33h</td>
-                        <td><button class="btn-estado btn btn-success btn-sm">En Proceso</button></td>
-                        <td>
-                            <div class="d-flex justify-content-center gap-3">
-                                <div>
-                                    <button class="btn-mostrar btn btn-warning btn-sm d-flex align-items-center gap-1" data-bs-toggle="modal" data-bs-target="#exampleModal"><span class="material-icons">visibility</span>Mostrar</button>
-                                </div>
-                                <div>
-                                    <button class="btn-mostrar btn btn-danger btn-sm d-flex align-items-center gap-1"><span class="material-icons">delete_forever</span></button>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row ">123456789</th>
-                        <td class="">
-                            <div class="d-flex justify-content-center gap-2">
-                                <div class="autor-img">
-                                    <img src="/public/assets/foto-perfil.png">
-                                </div>
-                                <div class="autor-nombre">
-                                    <div>NombreUser</div>
-                                    <div class="email-font">nombreuser@gmail.com</div>
-                                </div>
-                            </div>
-                        </td>
-                        <td>16/10/2022 - 08:15h</td>
-                        <td>17/10/2022 - 12:33h</td>
-                        <td><button class="btn-estado btn btn-success btn-sm">En Proceso</button></td>
-                        <td>
-                            <div class="d-flex justify-content-center gap-3">
-                                <div>
-                                    <button class="btn-mostrar btn btn-warning btn-sm d-flex align-items-center gap-1" data-bs-toggle="modal" data-bs-target="#exampleModal"><span class="material-icons">visibility</span>Mostrar</button>
-                                </div>
-                                <div>
-                                    <button class="btn-mostrar btn btn-danger btn-sm d-flex align-items-center gap-1"><span class="material-icons">delete_forever</span></button>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row ">123456789</th>
-                        <td class="">
-                            <div class="d-flex justify-content-center gap-2">
-                                <div class="autor-img">
-                                    <img src="/public/assets/foto-perfil.png">
-                                </div>
-                                <div class="autor-nombre">
-                                    <div>NombreUser</div>
-                                    <div class="email-font">nombreuser@gmail.com</div>
-                                </div>
-                            </div>
-                        </td>
-                        <td>16/10/2022 - 08:15h</td>
-                        <td>17/10/2022 - 12:33h</td>
-                        <td><button class="btn-estado btn btn-success btn-sm">En Proceso</button></td>
-                        <td>
-                            <div class="d-flex justify-content-center gap-3">
-                                <div>
-                                    <button class="btn-mostrar btn btn-warning btn-sm d-flex align-items-center gap-1" data-bs-toggle="modal" data-bs-target="#exampleModal"><span class="material-icons">visibility</span>Mostrar</button>
-                                </div>
-                                <div>
-                                    <button class="btn-mostrar btn btn-danger btn-sm d-flex align-items-center gap-1"><span class="material-icons">delete_forever</span></button>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-
-
-
-
                 </tbody>
                 </table>
             </div>
@@ -346,7 +180,7 @@
                                     <label for="validationCustom01" class="form-label titulo"
                                         >Comarca</label
                                     >
-                                    <select class="form-select" v-model="comarcaSelect">
+                                    <select class="form-select" v-model="comarcaSelect" disabled>
                                         <option
                                             v-for="comarca in comarcas"
                                             :value="comarca.id"
@@ -361,7 +195,7 @@
                                     <label for="validationCustom01" class="form-label titulo"
                                         >Provincia</label
                                     >
-                                    <select class="form-select" v-model="provinciaSelect">
+                                    <select class="form-select" v-model="provinciaSelect" disabled>
                                         <option
                                             v-for="provincia in provincias"
                                             :value="provincia.id"
@@ -376,7 +210,7 @@
                                     <label for="validationCustom01" class="form-label titulo"
                                         >Municipio</label
                                     >
-                                    <select class="form-select" v-model="municipioSelect">
+                                    <select class="form-select" v-model="municipioSelect" disabled>
                                         <option
                                             v-for="municipio in municipios"
                                             :value="municipio.id"
@@ -387,26 +221,39 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="row mt-5 mb-3">
+                                <hr>
+                            </div>
                             <h6 class="texto-modal pb-3">Otros Datos</h6>
                             <div class="row mb-3">
                                 <div class="col">
+                                    <label for="exampleInputPassword1" class="form-label">Id Agencia</label>
+                                    <input type="text" placeholder="Accidente moto" class="form-control" id="exampleInputPassword1" disabled>
+                                </div>
+                                <div class="col">
+                                    <label for="exampleInputPassword1" class="form-label">Nombre Agencia</label>
+                                    <input type="text" placeholder="1:24min" class="form-control" id="exampleInputPassword1" disabled>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col">
                                     <label for="exampleInputPassword1" class="form-label">Incidente</label>
-                                    <input type="text" placeholder="Accidente moto" class="form-control" id="exampleInputPassword1">
+                                    <input type="text" placeholder="Accidente moto" class="form-control" id="exampleInputPassword1" disabled>
                                 </div>
                                 <div class="col">
                                     <label for="exampleInputPassword1" class="form-label">Tiempo Llamada</label>
-                                    <input type="text" placeholder="1:24min" class="form-control" id="exampleInputPassword1">
+                                    <input type="text" placeholder="1:24min" class="form-control" id="exampleInputPassword1" disabled>
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <div class="col">
                                     <label for="exampleInputEmail1" class="form-label">Nota Común</label>
-                                    <textarea class="form-control nota-comun-modal" id="validationTextarea" placeholder="El incidente ocurrio hace 5 min, al lado de la via..."></textarea>
+                                    <textarea class="form-control nota-comun-modal" id="validationTextarea" placeholder="El incidente ocurrio hace 5 min, al lado de la via..." disabled></textarea>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-guardar-modal">Guardar</button>
-                                <button type="button" class="btn btn-dark btn-cerrar-modal" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-guardar-modal btn-cerrar-modal" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-dark">Guardar</button>
                             </div>
 
                         </form>
@@ -483,9 +330,9 @@ export default {
 
 <style lang="scss" scoped>
 .btn-guardar-modal{
-    background-color: var(--color-rosa);
+    background-color: var(--color-rosa-fuerte);
     color: white;
-    border: 1px solid var(--color-rosa);
+    border: 1px solid var(--color-rosa-fuerte);
 }
 .btn-guardar-modal:hover{
     opacity: 60%;
