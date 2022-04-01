@@ -40,12 +40,13 @@ class CartaTrucadaController extends Controller
         $carta->procedencia_trucada = $request->input('procedencia_trucada');
         $carta->origen_trucada = $request->input('origen_trucada');
         $carta->nom_trucada = $request->input('nom_trucada');
+        $carta->comarca = $request->input('comarca_id');
         $carta->municipis_id_trucada = $request->input('municipis_id_trucada');
         $carta->adreca_trucada = $request->input('adreca_trucada');
         $carta->fora_catalunya = $request->input('fora_catalunya');
         $carta->provincies_id = $request->input('provincies_id');
         $carta->municipis_id = $request->input('municipis_id');
-        $carta->tipus_localitzacions = $request->input('tipus_localitzacions');
+        $carta->tipus_localitzacions_id = $request->input('tipus_localitzacions_id');
         $carta->descripcio_localitzacio = $request->input('descripcio_localitzacio');
         $carta->altres_ref_localitzacio = $request->input('altres_ref_localitzacio');
         $carta->incidents_id = $request->input('incidents_id');
