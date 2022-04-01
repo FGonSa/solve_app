@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+
 const apiClient = axios.create({
     baseURL: 'http://localhost/proyecto112/public/api/',
     // baseURL: 'http://localhost:8080/proyecto112/public/api/',
@@ -9,6 +10,8 @@ const apiClient = axios.create({
         'Content-Type': 'application/json'
     }
 })
+
+
 
 export default {
     getEvents() {
@@ -32,7 +35,5 @@ export default {
     getEstado(){
         return apiClient.get("estats_expedients");
     },
-    insertCarta(){
-        return apiClient.post('cartes_trucades');
-    }
+
 };
