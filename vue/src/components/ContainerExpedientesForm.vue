@@ -5,79 +5,40 @@
             </div>
             <div class="carta-expediente-body">
                 <table class="table table-striped">
-                    <!-- <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form> -->
-                <thead>
-                <tr>
-                    <th scope="col">ID Expediente</th>
-                    <th scope="col">Autor</th>
-                    <th scope="col">Fecha</th>
-                    <th scope="col">Actualizado</th>
-                    <th scope="col">Estado</th>
-                    <th scope="col">Editar</th>
-                    <!-- <th scope="col">Eliminar</th> -->
-                </tr>
-                </thead>
-                <tbody>
-                    <!-- v-for="(idExp, imagenPath, nombre, email, fecha, actualizacion, estado) in myObject -->
-                    <tr>
-                        <th scope="row ">123456789</th>
-                        <td class="">
-                            <div class="d-flex justify-content-center gap-2">
-                                <div class="autor-img">
-                                    <img src="/public/assets/foto-perfil.png">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">ID Expediente</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Actualizado</th>
+                            <th scope="col">Estado</th>
+                            <!-- <th scope="col">Editar</th>
+                            <th scope="col">Estado</th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="expedient in expedients"
+                            :value="expedient.id"
+                            :key="expedient.id">
+                            <th scope="row">{{ expedient.id }}</th>
+                            <td>{{ expedient.data_creacio }}</td>
+                            <td>{{ expedient.data_ultima_modificacio }}</td>
+                            <td v-for="estado in estats_expedients"
+                                :value="estado.id"
+                                :key="estado.id">
+                                <div class="d-flex justify-content-center mt-3"><p v-if="expedient.estats_expedients_id == estado.id" >{{ estado.estat }}</p></div>
+                            </td>
+                            <td>
+                                <div class="d-flex justify-content-center gap-3 mx-5">
+                                    <div>
+                                        <button class="btn-mostrar btn btn-warning btn-sm d-flex align-items-center gap-1" data-bs-toggle="modal" data-bs-target="#exampleModal"><span class="material-icons">visibility</span>Mostrar</button>
+                                    </div>
+                                    <div>
+                                        <button class="btn-mostrar btn btn-danger btn-sm d-flex align-items-center gap-1"><span class="material-icons">delete_forever</span></button>
+                                    </div>
                                 </div>
-                                <div class="autor-nombre">
-                                    <div>NombreUser</div>
-                                    <div class="email-font">nombreuser@gmail.com</div>
-                                </div>
-                            </div>
-                        </td>
-                        <td>16/10/2022 - 08:15h</td>
-                        <td>17/10/2022 - 12:33h</td>
-                        <td><button class="btn-estado btn btn-success btn-sm">En Proceso</button></td>
-                        <td>
-                            <div class="d-flex justify-content-center gap-3">
-                                <div>
-                                    <button class="btn-mostrar btn btn-warning btn-sm d-flex align-items-center gap-1" data-bs-toggle="modal" data-bs-target="#exampleModal"><span class="material-icons">visibility</span>Mostrar</button>
-                                </div>
-                                <div>
-                                    <button class="btn-mostrar btn btn-danger btn-sm d-flex align-items-center gap-1"><span class="material-icons">delete_forever</span></button>
-                                </div>
-                            </div>
-                        </td>
-                        <!-- <td><button class="btn-mostrar btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal"><span class="material-icons">visibility</span>Mostrar</button></td> -->
-                    </tr>
-                    <tr>
-                        <th scope="row ">123456789</th>
-                        <td class="">
-                            <div class="d-flex justify-content-center gap-2">
-                                <div class="autor-img">
-                                    <img src="/public/assets/foto-perfil.png">
-                                </div>
-                                <div class="autor-nombre">
-                                    <div>NombreUser</div>
-                                    <div class="email-font">nombreuser@gmail.com</div>
-                                </div>
-                            </div>
-                        </td>
-                        <td>16/10/2022 - 08:15h</td>
-                        <td>17/10/2022 - 12:33h</td>
-                        <td><button class="btn-estado btn btn-success btn-sm">En Proceso</button></td>
-                        <td>
-                            <div class="d-flex justify-content-center gap-3">
-                                <div>
-                                    <button class="btn-mostrar btn btn-warning btn-sm d-flex align-items-center gap-1" data-bs-toggle="modal" data-bs-target="#exampleModal"><span class="material-icons">visibility</span>Mostrar</button>
-                                </div>
-                                <div>
-                                    <button class="btn-mostrar btn btn-danger btn-sm d-flex align-items-center gap-1"><span class="material-icons">delete_forever</span></button>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
 
@@ -257,12 +218,22 @@
                             </div>
 
                         </form>
-
                     </div>
                     </div>
                 </div>
             </div>
     </div>
+    <!-- <td class="">
+                            <div class="d-flex justify-content-center gap-2">
+                                <div class="autor-img">
+                                    <img src="/public/assets/foto-perfil.png">
+                                </div>
+                                <div class="autor-nombre">
+                                    <div>NombreUser</div>
+                                    <div class="email-font">nombreuser@gmail.com</div>
+                                </div>
+                            </div>
+                        </td> -->
 </template>
 
 
@@ -277,7 +248,8 @@ export default {
             provincias: null,
             municipios: null,
             foraCat: 0,
-            estats_expedients: null,
+            estats_expedients: '',
+            expedients: '',
         };
     },
     methods: {
@@ -322,6 +294,15 @@ export default {
             .catch((error) => {
                 console.log(error);
             });
+        EventService.getExpedientes()
+            .then((response) => {
+                this.expedients = response.data;
+
+                JSON.parse(JSON.stringify(this.expedients));
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     },
 };
 
@@ -329,6 +310,9 @@ export default {
 
 
 <style lang="scss" scoped>
+.aaa{
+    // align: center;
+}
 .btn-guardar-modal{
     background-color: var(--color-rosa-fuerte);
     color: white;

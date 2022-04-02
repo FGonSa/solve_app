@@ -35,5 +35,8 @@ export default {
     getEstado(){
         return apiClient.get("estats_expedients");
     },
+    getExpedientes(){
+        return apiClient.get("expedients");
+    },
 
 };

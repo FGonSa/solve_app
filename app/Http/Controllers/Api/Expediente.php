@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Expedient;
 use Illuminate\Http\Request;
+use App\Http\Resources\Expediente as ExpedienteResources;
 
 class Expediente extends Controller
 {
@@ -15,7 +16,10 @@ class Expediente extends Controller
      */
     public function index()
     {
-        //
+        //models
+        $expedient = Expedient::all();
+        //resourses
+        return ExpedienteResources::collection($expedient);
     }
 
     /**
