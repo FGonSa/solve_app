@@ -90,6 +90,7 @@ this.$emit('pagina-expedientes', this.isSuccess);
                 })
                 .catch((error) => {
                     this.isSuccess = false;
+                    alert("ERROR! No se ha podido insertar la carta. Compruebe que los datos son correctos.")
                 });
         },
     },
