@@ -102,6 +102,7 @@ export default {
             this.cartaLlamada.adreca_trucada = datosPrincipales.adreca_trucada;
         },
         getLocalizacion(localizacion) {
+
             this.cartaLlamada.fora_catalunya = localizacion.foraCat;
             this.cartaLlamada.provincies_id = localizacion.provinciaSelect;
             this.cartaLlamada.municipis_id = localizacion.municipioSelect;
