@@ -1,5 +1,8 @@
 <template>
     <div class="container-fluid mt-4">
+        <div class="alert alert-success" v-if="isSuccess">
+            Registro insertado con éxito.
+        </div>
         <form class="row g-3 needs-validation" @submit.prevent="insertCarta">
             <div class="row">
                 <label for="validationCustom01" class="form-label"
@@ -53,13 +56,14 @@ export default {
     props: ["cartaLlamada"],
     data() {
         return {
+            isSuccess: false,
             finalizacion: {
                 como_cerrar_carta: null,
                 nota_comuna:
                     "Relación con el incidente: \nDescripción del suceso: \nComentario extra a añadir:",
             },
             objeto: this.cartaLlamada,
-            prueba: {"codi_trucada":"algo","data_hora":null,"temps_trucada":null,"dades_personals_id":2,"telefono":"666","nom_trucada":"IAGO","municipis_id_trucada":18,"procedencia_trucada":"SADSA","origen_trucada":"SADSA","adreca_trucada":"SADAS","fora_catalunya":0,"provincies_id":1,"municipis_id":16,"comarca_id":18,"tipus_localitzacions_id":"2","descripcio_localitzacio":"SADAS","detall_localitzacio":"SASDASDASS","altres_ref_localitzacio":"SASAD","incidents_id":18,"tipus_incidents_descripcio":1,"como_cerrar_carta":"asociar_expediente","nota_comuna":"Relación con el incidente: \nDescripción del suceso: \nComentario extra a añadir:","expedients_id":2,"usuaris_id":1},
+           // prueba: {"codi_trucada":"algo","data_hora":null,"temps_trucada":null,"dades_personals_id":2,"telefono":"666","nom_trucada":"IAGO","municipis_id_trucada":18,"procedencia_trucada":"SADSA","origen_trucada":"SADSA","adreca_trucada":"SADAS","fora_catalunya":0,"provincies_id":1,"municipis_id":16,"comarca_id":18,"tipus_localitzacions_id":"2","descripcio_localitzacio":"SADAS","detall_localitzacio":"SASDASDASS","altres_ref_localitzacio":"SASAD","incidents_id":18,"tipus_incidents_descripcio":1,"como_cerrar_carta":"asociar_expediente","nota_comuna":"Relación con el incidente: \nDescripción del suceso: \nComentario extra a añadir:","expedients_id":2,"usuaris_id":1},
         };
     },
     methods: {
@@ -79,6 +83,7 @@ let article = JSON.stringify(this.objeto);
         }
       )
       .then((response) => {
+          this.isSuccess = true
         console.log(response);
       })
       .catch((error) => {
