@@ -2,10 +2,10 @@
 	<main id="Ajustes-page">
 		<div class="row container-fluid">
 			<div class="col containers-ajustes mt-5">
-				<ContainerAjustes imagen="/public/assets/profile-edit.png" titulo="Perfil" url="/ajustes/perfil"/>
-				<ContainerAjustes imagen="/public/assets/menu-edit.png" titulo="General" url="/ajustes/general"/>
+				<ContainerAjustes imagen="/public/assets/profile-edit.png" titulo="Perfil" url="/ajustes/perfil" color_flecha="white"/>
+				<ContainerAjustes imagen="/public/assets/menu-edit.png" titulo="General" url="/ajustes/general" color_flecha="white"/>
 			</div>
-		</div>		
+		</div>
 	</main>
 </template>
 <script setup>
