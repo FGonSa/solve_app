@@ -1,18 +1,6 @@
 <template>
     <div class="container-fluid mt-4">
-        <div
-            class="alert alert-success alert-dismissible fade show"
-            role="alert"
-            v-if="isSuccess"
-        >
-            Registro insertado con éxito.
-            <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="alert"
-                aria-label="Close"
-            ></button>
-        </div>
+
 
         <form class="row g-3 needs-validation" @submit.prevent="insertCarta">
             <div class="row">
@@ -49,7 +37,7 @@
                 </div>
             </div>
             <div class="btn-margin-right d-flex justify-content-end mt-4">
-                <button type="submit" class="div-btn-fin-btn btn btn-dark mt-3">
+                <button type="submit" class="div-btn-fin-btn btn btn-dark mt-3" @click="getSuccess(isSuccess)">
                     <div class="d-flex align-content-center gap-2">
                         <span class="material-icons">check</span>
                         Terminar
@@ -67,7 +55,7 @@ export default {
     props: ["cartaLlamada"],
     data() {
         return {
-            isSuccess: false,
+            isSuccess: null,
             finalizacion: {
                 como_cerrar_carta: null,
                 nota_comuna:
@@ -80,6 +68,9 @@ export default {
     methods: {
         getFinalizacion() {
             this.$emit("padre-datos-llamada", this.finalizacion);
+        },
+        getSuccess(){
+this.$emit('pagina-expedientes', this.isSuccess);
         },
         insertCarta() {
             let article = JSON.stringify(this.objeto);
@@ -95,10 +86,10 @@ export default {
                 )
                 .then((response) => {
                     this.isSuccess = true;
-                    console.log(response);
+                  this.$router.push('/expediente')
                 })
                 .catch((error) => {
-                    console.log(error.message);
+                    this.isSuccess = false;
                 });
         },
     },
