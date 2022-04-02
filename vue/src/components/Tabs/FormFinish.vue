@@ -1,6 +1,6 @@
 <template>
     <div class="container-fluid mt-4">
-        <form class="row g-3 needs-validation">
+        <form class="row g-3 needs-validation" @submit.prevent="insertCarta">
             <div class="row">
                 <label for="validationCustom01" class="form-label"
                     >Selecciona cómo cerrar la carta:</label
@@ -35,11 +35,7 @@
                 </div>
             </div>
             <div class="btn-margin-right d-flex justify-content-end mt-4">
-                <button
-
-                    class="div-btn-fin-btn btn btn-dark mt-3"
-                    @click="insertCarta()"
-                >
+                <button type="submit" class="div-btn-fin-btn btn btn-dark mt-3">
                     <div class="d-flex align-content-center gap-2">
                         <span class="material-icons">check</span>
                         Terminar
@@ -52,14 +48,9 @@
 
 <script>
 import EventService from "../../services/EventService.js";
-import axios from 'axios'
+import axios from "axios";
 export default {
-    props: {
-        cartaLlamada: {
-            type: Object,
-            required: true,
-        },
-    },
+    props: ["cartaLlamada"],
     data() {
         return {
             finalizacion: {
@@ -67,6 +58,8 @@ export default {
                 nota_comuna:
                     "Relación con el incidente: \nDescripción del suceso: \nComentario extra a añadir:",
             },
+            objeto: this.cartaLlamada,
+            prueba: {"codi_trucada":"algo","data_hora":null,"temps_trucada":null,"dades_personals_id":2,"telefono":"666","nom_trucada":"IAGO","municipis_id_trucada":18,"procedencia_trucada":"SADSA","origen_trucada":"SADSA","adreca_trucada":"SADAS","fora_catalunya":0,"provincies_id":1,"municipis_id":16,"comarca_id":18,"tipus_localitzacions_id":"2","descripcio_localitzacio":"SADAS","detall_localitzacio":"SASDASDASS","altres_ref_localitzacio":"SASAD","incidents_id":18,"tipus_incidents_descripcio":1,"como_cerrar_carta":"asociar_expediente","nota_comuna":"Relación con el incidente: \nDescripción del suceso: \nComentario extra a añadir:","expedients_id":2,"usuaris_id":1},
         };
     },
     methods: {
@@ -74,17 +67,26 @@ export default {
             this.$emit("padre-datos-llamada", this.finalizacion);
         },
         insertCarta() {
+let article = JSON.stringify(this.objeto);
             axios
-                .post(
-                    "http://localhost/proyecto112/public/api/cartes_trucades",
-                    this.cartaLlamada
-                )
-                .then((response) => {
-                    console.log(response);
-                });
-        },
-    },
-};
+      .post(
+        "http://localhost/proyecto112/public/api/cartes_trucades",
+       article,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  }
+}
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
