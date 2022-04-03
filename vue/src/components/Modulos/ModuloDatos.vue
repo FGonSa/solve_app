@@ -5,19 +5,50 @@
             <h5>Meta-Datos</h5>
         </div>
         <div class="carta-body p-3">
-            <p class="carta-text">Fecha: 01/01/2022 00:00</p>
-            <p class="carta-text">Código llamada: 12345678/A</p>
-            <p class="carta-text">Tiempo: 01:30</p>
+            <p class="carta-text">Fecha: {{ fechaActual() }}</p>
+            <p class="carta-text">Código llamada: {{generarCodigoLlamada()}}</p>
+            <p class="carta-text" >Tiempo: <span id="minutes"></span>:<span id="seconds"></span></p>
         </div>
 </div>
     <!-- </div> -->
 </template>
 
 <script>
-export default {
-    setup() {
 
+export default {
+    data() {
+return {
+
+}
     },
+    methods: {
+        fechaActual(){
+            let hoy = new Date();
+            let hora = hoy.getHours() + ':' + hoy.getMinutes() + ':' + hoy.getSeconds();
+            let fecha = hoy.getDate() + '-' + ( hoy.getMonth() + 1 ) + '-' + hoy.getFullYear();
+            let fechaYHora = fecha + ' ' + hora;
+            return fechaYHora
+        },
+        generarCodigoLlamada(){
+             let caracteres = "abcdefghijkmnpqrtuvwxyzABCDEFGHJKMNPQRTUVWXYZ2346789";
+       let codigo = "";
+       let i = 0
+       for (i=0; i<20; i++) codigo +=caracteres.charAt(Math.floor(Math.random()*caracteres.length));
+       codigo = codigo.toUpperCase().substr(0,9)
+       return codigo
+        },
+    },
+    created(){
+
+            var sec = 0;
+    function pad ( val ) { return val > 9 ? val : "0" + val; }
+    setInterval( function(){
+        document.getElementById("seconds").innerHTML=pad(++sec%60);
+        document.getElementById("minutes").innerHTML=pad(parseInt(sec/60,10));
+    }, 1000)
+    return sec
+    }
+
 }
 </script>
 

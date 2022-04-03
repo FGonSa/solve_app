@@ -1,6 +1,6 @@
 <template>
     <div class="container-fluid">
-        <form class="row g-3 needs-validation">
+        <form class="row g-3 needs-validation" >
             <div class="col-lg-6">
                 <label class="form-label">Nombre</label>
                 <input @blur="getDatosPrincipales(datosPrincipales)" v-model="datosPrincipales.nom_trucada" type="text" class="form-control" autofocus required />
