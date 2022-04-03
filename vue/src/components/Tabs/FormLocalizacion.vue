@@ -127,35 +127,35 @@
                     <label for="validationCustom01" class="form-label titulo"
                         >Nombre</label
                     >
-                    <input type="password" class="form-control" />
+                    <input type="text" class="form-control" />
                 </div>
 
                 <div class="col">
                     <label for="validationCustom01" class="form-label titulo"
                         >Número</label
                     >
-                    <input type="password" class="form-control" />
+                    <input type="text" class="form-control" />
                 </div>
 
                 <div class="col">
                     <label for="validationCustom01" class="form-label titulo"
                         >Escalera</label
                     >
-                    <input type="password" class="form-control" />
+                    <input type="text" class="form-control" />
                 </div>
 
                 <div class="col">
                     <label for="validationCustom01" class="form-label titulo"
                         >Piso</label
                     >
-                    <input type="password" class="form-control" />
+                    <input type="text" class="form-control" />
                 </div>
 
                 <div class="col">
                     <label for="validationCustom01" class="form-label titulo"
                         >Puerta</label
                     >
-                    <input type="password" class="form-control" />
+                    <input type="text" class="form-control" />
                 </div>
             </div>
 
