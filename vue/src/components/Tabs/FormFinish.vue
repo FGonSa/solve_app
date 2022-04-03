@@ -86,7 +86,9 @@ this.$emit('pagina-expedientes', this.isSuccess);
                 )
                 .then((response) => {
                     this.isSuccess = true;
-                  this.$router.push('/expediente')
+                //   this.$router.push('/expediente')
+                //hace que se recargue la pagina automaticamente al enviar el POST
+                    this.$router.go()
                 })
                 .catch((error) => {
                     this.isSuccess = false;
