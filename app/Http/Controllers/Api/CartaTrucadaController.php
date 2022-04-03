@@ -18,8 +18,10 @@ class CartaTrucadaController extends Controller
      */
     public function index()
     {
-        $agencia = CartaTrucada::all();
-        return CartaTrucadaResource::collection($agencia);
+        //models
+        $cartes_trucades = CartaTrucada::all();
+        //resourses
+        return CartaTrucadaResource::collection($cartes_trucades);
     }
 
     /**

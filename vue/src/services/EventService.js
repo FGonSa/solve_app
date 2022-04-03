@@ -38,5 +38,8 @@ export default {
     getExpedientes(){
         return apiClient.get("expedients");
     },
+    getCartaLlamada(){
+        return apiClient.get("cartes_trucades");
+    },
 
 };
