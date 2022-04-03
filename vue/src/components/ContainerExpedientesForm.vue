@@ -22,10 +22,15 @@
                             <th scope="row">{{ expedient.id }}</th>
                             <td>{{ expedient.data_creacio }}</td>
                             <td>{{ expedient.data_ultima_modificacio }}</td>
-                            <td v-for="estado in estats_expedients"
-                                :value="estado.id"
-                                :key="estado.id">
-                                <div class="d-flex justify-content-center mt-3"><p v-if="expedient.estats_expedients_id == estado.id" >{{ estado.estat }}</p></div>
+                            <td>
+                                <select v-model="expedient.estats_expedients_id" :class=" 'estado_select' + expedient.estats_expedients_id" disabled>
+                                    <option v-for="estado in estats_expedients"
+                                            :value="estado.id"
+                                            :key="estado.id"
+                                            :class=" 'estado_select' + estado.id ">
+                                            <p>{{ estado.estat }}</p>
+                                    </option>
+                                </select>
                             </td>
                             <td>
                                 <div class="d-flex justify-content-center gap-3 mx-5">
@@ -223,17 +228,6 @@
                 </div>
             </div>
     </div>
-    <!-- <td class="">
-                            <div class="d-flex justify-content-center gap-2">
-                                <div class="autor-img">
-                                    <img src="/public/assets/foto-perfil.png">
-                                </div>
-                                <div class="autor-nombre">
-                                    <div>NombreUser</div>
-                                    <div class="email-font">nombreuser@gmail.com</div>
-                                </div>
-                            </div>
-                        </td> -->
 </template>
 
 
@@ -250,6 +244,7 @@ export default {
             foraCat: 0,
             estats_expedients: '',
             expedients: '',
+            selectedAtributo: false,
         };
     },
     methods: {
@@ -310,8 +305,28 @@ export default {
 
 
 <style lang="scss" scoped>
-.aaa{
-    // align: center;
+.estado_select1{
+    background-color: var(--color-verde);
+    color: var(--dark);
+}
+.estado_select2{
+    background-color: var(--color-amarillo);
+    color: var(--dark);
+}
+.estado_select3{
+    background-color: var(--color-verde-oliva);
+    color: white;
+}
+.estado_select4{
+    background-color: var(--color-azul-fuerte);
+    color: white;
+}
+.estado_select5{
+    background-color: var(--color-lila);
+    color: white;
+}
+select:disabled {
+  cursor: not-allowed;
 }
 .btn-guardar-modal{
     background-color: var(--color-rosa-fuerte);

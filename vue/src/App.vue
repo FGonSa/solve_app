@@ -35,6 +35,9 @@ import Navbar from './components/Navbar.vue'
 	--color-azul-fuerte: #0088ff;
 	--color-amarillo-fuerte: #ffe11c;
 	--color-amarillo-visible: #eecc09;
+    --color-verde: #2feb45;
+    --color-verde-oliva: #5a8700;
+    --color-lila: #8a24b3;
 }
 * {
 	margin: 0;
