@@ -11,14 +11,14 @@ class CartaTrucadaHasAgencias extends Model
 
     protected $table = 'cartes_trucades_has_agencies';
     //Por defecto ya vienen estos valores
-    protected $primary_key = ['cartes_trucades_id, agencies_id, estats_agencies_id'];
+    protected $primary_key = ['cartes_trucades_id, agencies_id'];
     public $incrementing = false;
-    public $timestamps = false;//debemos indicar a Eloquent que no tenemos timestamps
+    public $timestamps = false; //debemos indicar a Eloquent que no tenemos timestamps
 
 
     public function agencies()
     {
-        return $this->belongsTo(Agencia::class, 'id');
+        return $this->belongsTo(Agencia::class, 'agencies_id');
     }
 
     public function cartes_trucades()
@@ -28,6 +28,6 @@ class CartaTrucadaHasAgencias extends Model
 
     public function estat_agencies()
     {
-        return $this->belongsTo(EstatAgencia::class, 'id');
+        return $this->belongsTo(EstatAgencia::class, 'estats_agencies_id');
     }
 }

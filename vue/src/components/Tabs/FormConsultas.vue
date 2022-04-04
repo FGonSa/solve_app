@@ -1,5 +1,18 @@
 <template>
-    <div class="container-fluid">
+        <div class="row container-fluid" @pagina-expedientes="getSuccess">
+                     <div
+            class="alert alert-success alert-dismissible fade show py-2"
+            role="alert"
+            v-if="isSuccess"
+        >
+            Registro insertado con éxito.
+            <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="alert"
+                aria-label="Close"
+            ></button>
+        </div>
         <form class="row g-3 needs-validation" >
             <div class="col-lg-6">
                 <label class="form-label">Nombre</label>

@@ -70,13 +70,14 @@ export default {
             this.$emit("padre-datos-llamada", this.finalizacion);
         },
         getSuccess(){
-this.$emit('pagina-expedientes', this.isSuccess);
+            this.$emit('pagina-expedientes', this.isSuccess);
         },
         insertCarta() {
             let article = JSON.stringify(this.objeto);
             axios
                 .post(
-                    "http://localhost/proyecto112/public/api/cartes_trucades",
+                    // "http://localhost/proyecto112/public/api/cartes_trucades",
+                    "http://localhost:8080/proyecto112/public/api/cartes_trucades",
                     article,
                     {
                         headers: {

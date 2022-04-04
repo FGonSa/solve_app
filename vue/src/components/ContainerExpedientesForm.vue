@@ -89,22 +89,11 @@
                                                                 <label for="validationCustom01" class="form-label titulo mb-2">Asociadas a este Expediente</label>
                                                                 <div class="d-flex flex-wrap">
                                                                     <div v-for="llamada in cartes_trucades">
-                                                                        <div><button type="button" v-if="expedient.id == llamada.expedients_id" class="btn-mostrar btn btn-warning btn-sm d-flex align-items-center gap-1 border border-white" data-bs-toggle="modal" data-bs-target="#modalCartasLlamadas"><span class="material-icons">visibility</span>{{ llamada.id }}</button></div>
-                                                                        <div><div class="modal" id="modalCartasLlamadas" tabindex="-1" aria-labelledby="modalCartasLlamadas" aria-hidden="true">
-                                                                            <div class="modal-dialog">
-                                                                                <div class="modal-content">
-                                                                                    <div class="modal-header">
-                                                                                        <h5 class="modal-title">Editar Expediente</h5>
-                                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                                                    </div>
-                                                                                    <div class="modal-body">
-                                                                                        soy el body
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div></div>
+                                                                        <div><a type="button" v-if="expedient.id == llamada.expedients_id" class="btn-mostrar btn btn-warning btn-sm d-flex align-items-center gap-1 border border-white" data-bs-toggle="modal" data-bs-target="#exampleModal123"><span class="material-icons">visibility</span>{{ llamada.id }}</a></div>
+
+                                                                        </div>
                                                                     </div>
-                                                                </div>
+
                                                                 <!-- <ul class="form-select">
                                                                     <li
                                                                         v-for="llamada in cartes_trucades"
@@ -212,6 +201,19 @@
                     </tbody>
                 </table>
             </div>
+            <div class="modal fade" id="exampleModal123" tabindex="-1" aria-labelledby="modalHeader1" aria-hidden="true">
+                                                                                <div class="modal-dialog">
+                                                                                    <div class="modal-content">
+                                                                                        <div class="modal-header" >
+                                                                                            <h5 class="modal-title" id="modalHeader1">Editar Expediente</h5>
+                                                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                                        </div>
+                                                                                        <div class="modal-body">
+                                                                                            soy el body
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
 
             <div class="p-5 d-flex justify-content-center">
                 <small>&copy; Copyright 2022, Solve Solutions</small>
