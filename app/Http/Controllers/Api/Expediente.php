@@ -45,7 +45,7 @@ class Expediente extends Controller
             $mensaje = Utilitat::errorMessage($ex);
             $response = \response()->json(['error' => $mensaje], 400);
         }
-        return $response;
+        return $expediente->id;
     }
 
     /**
