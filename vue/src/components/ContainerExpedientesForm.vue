@@ -46,7 +46,7 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="exampleModalLabel">Editar Expediente</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">`</button>
                                             </div>
                                             <div class="modal-body">
                                                 <form>
@@ -89,10 +89,11 @@
                                                                 <label for="validationCustom01" class="form-label titulo mb-2">Asociadas a este Expediente</label>
                                                                 <div class="d-flex flex-wrap">
                                                                     <div v-for="llamada in cartes_trucades">
-                                                                        <div><a type="button" v-if="expedient.id == llamada.expedients_id" class="btn-mostrar btn btn-warning btn-sm d-flex align-items-center gap-1 border border-white" data-bs-toggle="modal" data-bs-target="#exampleModal123"><span class="material-icons">visibility</span>{{ llamada.id }}</a></div>
-
+                                                                        <div>
+                                                                            <a type="button" v-if="expedient.id == llamada.expedients_id" class="btn-mostrar btn btn-warning btn-sm d-flex align-items-center gap-1 border border-white" data-bs-toggle="modal" :data-bs-target="'#modal_cartaLlamada' + llamada.id"><span class="material-icons">visibility</span>{{ llamada.id }}</a>
                                                                         </div>
                                                                     </div>
+                                                                </div>
 
                                                                 <!-- <ul class="form-select">
                                                                     <li
@@ -159,39 +160,89 @@
                                                     <div class="row mt-5 mb-3">
                                                         <hr>
                                                     </div>
-                                                    <h6 class="texto-modal pb-3">Otros Datos</h6>
-                                                    <div class="row mb-3">
+                                                    <h6 class="texto-modal pb-3">Agencias</h6>
+                                                    <div class="row mb-5">
                                                         <div class="col">
-                                                            <label for="exampleInputPassword1" class="form-label">Id Agencia</label>
-                                                            <input type="text" placeholder="Accidente moto" class="form-control" id="exampleInputPassword1" disabled>
-                                                        </div>
-                                                        <div class="col">
-                                                            <label for="exampleInputPassword1" class="form-label">Nombre Agencia</label>
-                                                            <input type="text" placeholder="1:24min" class="form-control" id="exampleInputPassword1" disabled>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row mb-3">
-                                                        <div class="col">
-                                                            <label for="exampleInputPassword1" class="form-label">Incidente</label>
-                                                            <input type="text" placeholder="Accidente moto" class="form-control" id="exampleInputPassword1" disabled>
-                                                        </div>
-                                                        <div class="col">
-                                                            <label for="exampleInputPassword1" class="form-label">Tiempo Llamada</label>
-                                                            <input type="text" placeholder="1:24min" class="form-control" id="exampleInputPassword1" disabled>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row mb-3">
-                                                        <div class="col">
-                                                            <label for="exampleInputEmail1" class="form-label">Nota Común</label>
-                                                            <textarea class="form-control nota-comun-modal" id="validationTextarea" placeholder="El incidente ocurrio hace 5 min, al lado de la via..." disabled></textarea>
+                                                            <label for="validationCustom01" class="form-label titulo mb-2">Asociadas a este Expediente</label>
+                                                            <div class="d-flex flex-wrap">
+                                                                <div v-for="llamada in cartes_trucades">
+                                                                    <div>
+                                                                        <a type="button" v-if="expedient.id == llamada.expedients_id" class="btn-mostrar btn btn-warning btn-sm d-flex align-items-center gap-1 border border-white" data-bs-toggle="modal" :data-bs-target="'#modal_cartaLlamada' + llamada.id"><span class="material-icons">visibility</span>{{ llamada.id }}</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-guardar-modal btn-cerrar-modal" data-bs-dismiss="modal">Cancelar</button>
-                                                        <button type="submit" class="btn btn-dark">Guardar</button>
+                                                        <button type="button" class="btn btn-dark btn-cerrar-modal" data-bs-dismiss="modal">Cancelar</button>
+                                                        <button type="submit" class="btn btn-cancelar-modal ">Guardar</button>
                                                     </div>
 
                                                 </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div v-for="llamada in cartes_trucades">
+                                    <!-- modal bottones carta-llamada del otro modal -->
+                                    <div class="modal fade" :id="'modal_cartaLlamada' + llamada.id" tabindex="-1" aria-labelledby="modalHeader1" aria-hidden="true" data-bs-backdrop="static">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="modalHeader1">Carta de Llamada <b>{{ llamada.id }}</b></h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">`</button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <p><b>Id: </b>{{ llamada.id }}</p>
+                                                            <p><b>Código Llamada: </b>{{ llamada.codi_trucada }}</p>
+                                                            <p><b>Fecha: </b>{{ llamada.data_hora }}</p>
+                                                            <p><b>Tiempo Llamada: </b>{{ llamada.temps_trucada }}</p>
+                                                            <p><b>Datos Personales Id: </b>{{ llamada.dades_personals_id }}</p>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <p><b>Telefono: </b>{{ llamada.telefon }}</p>
+                                                            <p><b>Procedencia: </b>{{ llamada.procedencia_trucada }}</p>
+                                                            <p><b>Origen: </b>{{ llamada.origen_trucada }}</p>
+                                                            <p><b>Nombre: </b>{{ llamada.nom_trucada }}</p>
+                                                            <p><b>Municipio Id: </b>{{ llamada.municipis_id_trucada }}</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <p><b>Dirreccion Llamada: </b>{{ llamada.adreca_trucada }}</p>
+                                                            <p><b>Fuera de Cataluña: </b>{{ llamada.fora_catalunya }}</p>
+                                                            <p><b>Provincia Id: </b>{{ llamada.provincies_id }}</p>
+                                                            <p><b>Municipio Id: </b>{{ llamada.municipis_id }}</p>
+                                                            <p><b>Comarca Id: </b>{{ llamada.comarca }}</p>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <p><b>Tipo Localización Id: </b>{{ llamada.tipus_localitzacions_id }}</p>
+                                                            <p><b>Descripción Localización: </b>{{ llamada.descripcio_localitzacio }}</p>
+                                                            <p><b>Detalle Localización: </b>{{ llamada.detall_localitzacio }}</p>
+                                                            <p><b>Otras Referéncias: </b>{{ llamada.altres_ref_localitzacio }}</p>
+                                                            <p><b>Incidente Id: </b>{{ llamada.incidents_id }}</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <p><b>Expediente Id: </b>{{ llamada.expedients_id }}</p>
+                                                            <p><b>Nota Comuna: </b>{{ llamada.nota_comuna }}</p>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <p><b>Usuario Id: </b>{{ llamada.usuaris_id }}</p>
+                                                            <p><b>Tipo Incidente: </b>{{ llamada.tipus_incident }}</p>
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                </div>
+                                                <div class="modal-footer d-flex justify-content-start">
+                                                    <button class="btn-mostrar btn btn-warning btn-sm d-flex align-items-center gap-1" data-bs-toggle="modal" :data-bs-target="'#exampleModal' + llamada.expedients_id"><span class="material-icons">chevron_left</span>Atrás</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -201,19 +252,6 @@
                     </tbody>
                 </table>
             </div>
-            <div class="modal fade" id="exampleModal123" tabindex="-1" aria-labelledby="modalHeader1" aria-hidden="true">
-                                                                                <div class="modal-dialog">
-                                                                                    <div class="modal-content">
-                                                                                        <div class="modal-header" >
-                                                                                            <h5 class="modal-title" id="modalHeader1">Editar Expediente</h5>
-                                                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                                                        </div>
-                                                                                        <div class="modal-body">
-                                                                                            soy el body
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
 
             <div class="p-5 d-flex justify-content-center">
                 <small>&copy; Copyright 2022, Solve Solutions</small>
@@ -369,12 +407,12 @@ button:empty {
 select:disabled {
   cursor: not-allowed;
 }
-.btn-guardar-modal{
+.btn-cancelar-modal{
     background-color: var(--color-rosa-fuerte);
     color: white;
     border: 1px solid var(--color-rosa-fuerte);
 }
-.btn-guardar-modal:hover{
+.btn-cancelar-modal:hover{
     opacity: 60%;
 }
 .btn-cerrar-modal:hover{
