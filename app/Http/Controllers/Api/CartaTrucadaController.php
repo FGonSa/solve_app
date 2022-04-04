@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Database\QueryException;
 use App\Http\Resources\CartaTrucadaResource;
+use DateTime;
 
 class CartaTrucadaController extends Controller
 {
@@ -35,7 +36,7 @@ class CartaTrucadaController extends Controller
         $carta = new CartaTrucada();
 
         $carta->codi_trucada = $request->input('codi_trucada');
-        $carta->data_hora = $request->input('data_hora');
+        $carta->data_hora = new DateTime();
         $carta->temps_trucada = $request->input('temps_trucada');
         $carta->dades_personals_id = $request->input('dades_personals_id');
         $carta->telefon = $request->input('telefon');
