@@ -7,7 +7,7 @@
         <div class="carta-body p-3">
             <p class="carta-text" >Fecha: {{ fechaActual() }}</p>
             <p class="carta-text" >Código llamada: {{generarCodigoLlamada()}}</p>
-            <p class="carta-text">Tiempo: {{ generarTiempo() }}<span id="minutes">00</span>:<span id="seconds">00</span></p>
+            <p class="carta-text">Tiempo: <span id="minutes"></span>:<span id="seconds"></span></p>
         </div>
 </div>
     <!-- </div> -->
@@ -42,18 +42,14 @@ return {
             codigo = codigo.toUpperCase().substr(0,9)
             return this.metadatos.codigoLlamada = codigo
         },
-        generarTiempo(){
-            var sec = 0;
-            function pad ( val ) { return val > 9 ? val : "0" + val; }
+    },
+    created(){
+        var sec = 0;
+        function pad ( val ) { return val > 9 ? val : "0" + val; }
             setInterval( function(){
                 document.getElementById("seconds").innerHTML=pad(++sec%60);
                 document.getElementById("minutes").innerHTML=pad(parseInt(sec/60,10));
-                this.generarTiempo()
             }, 1000)
-        }
-    },
-    created(){
-            // this.generarTiempo()
         }
 
 }
