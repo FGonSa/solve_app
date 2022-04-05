@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\CartaTrucadaHasAgencias;
 use Illuminate\Http\Request;
+use App\Http\Resources\CartaTrucadaHasAgenciasResource;
 
 class CartaHasAgenciaController extends Controller
 {
@@ -15,7 +16,10 @@ class CartaHasAgenciaController extends Controller
      */
     public function index()
     {
-        //
+        //models
+        $cartes_trucades_has_agencies = CartaTrucadaHasAgencias::all();
+        //resourses
+        return CartaTrucadaHasAgenciasResource::collection($cartes_trucades_has_agencies);
     }
 
     /**

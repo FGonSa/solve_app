@@ -95,84 +95,12 @@
                                                                     </div>
                                                                 </div>
 
-                                                                <!-- <ul class="form-select">
-                                                                    <li
-                                                                        v-for="llamada in cartes_trucades"
-                                                                    >
-                                                                        <p v-if="expedient.id == llamada.expedients_id">Id: {{ llamada.id }}</p>
-                                                                        <p v-if="expedient.id == llamada.expedients_id">Id: {{ llamada.codi_trucada }}</p>
-                                                                        <p v-if="expedient.id == llamada.expedients_id">Id: {{ llamada.data_hora }}</p>
-                                                                        <p v-if="expedient.id == llamada.expedients_id">Id: {{ llamada.temps_trucada }}</p>
-                                                                        <p v-if="expedient.id == llamada.expedients_id">Id: {{ llamada.dades_personals_id }}</p>
-                                                                        <p v-if="expedient.id == llamada.expedients_id">Id: {{ llamada.telefon }}</p>
-                                                                        <p v-if="expedient.id == llamada.expedients_id">Id: {{ llamada.procedencia_trucada }}</p>
-                                                                        <p v-if="expedient.id == llamada.expedients_id">Id: {{ llamada.origen_trucada }}</p>
-                                                                        <p v-if="expedient.id == llamada.expedients_id">Id: {{ llamada.nom_trucada }}</p>
-                                                                        <p v-if="expedient.id == llamada.expedients_id">Id: {{ llamada.municipis_id_trucada }}</p>
-                                                                        <p v-if="expedient.id == llamada.expedients_id">Id: {{ llamada.adreca_trucada }}</p>
-                                                                        <p v-if="expedient.id == llamada.expedients_id">Id: {{ llamada.fora_catalunya }}</p>
-                                                                        <p v-if="expedient.id == llamada.expedients_id">Id: {{ llamada.provincies_id }}</p>
-                                                                        <p v-if="expedient.id == llamada.expedients_id">Id: {{ llamada.municipis_id }}</p>
-                                                                        <p v-if="expedient.id == llamada.expedients_id">Id: {{ llamada.tipus_localitzacions_id }}</p>
-                                                                        <p v-if="expedient.id == llamada.expedients_id">Id: {{ llamada.descripcio_localitzacio }}</p>
-                                                                        <p v-if="expedient.id == llamada.expedients_id">Id: {{ llamada.detall_localitzacio }}</p>
-                                                                        <p v-if="expedient.id == llamada.expedients_id">Id: {{ llamada.altres_ref_localitzacio }}</p>
-                                                                        <p v-if="expedient.id == llamada.expedients_id">Id: {{ llamada.incidents_id }}</p>
-                                                                        <p v-if="expedient.id == llamada.expedients_id">Id: {{ llamada.tipus_localitzacions_id }}</p>
-                                                                        <p v-if="expedient.id == llamada.expedients_id">Id: {{ llamada.descripcio_localitzacio }}</p>
-                                                                        <p v-if="expedient.id == llamada.expedients_id">Id: {{ llamada.detall_localitzacio }}</p>
-                                                                        <p v-if="expedient.id == llamada.expedients_id">Id: {{ llamada.altres_ref_localitzacio }}</p>
-                                                                        <p v-if="expedient.id == llamada.expedients_id">Id: {{ llamada.incidents_id }}</p>
-                                                                        <p v-if="expedient.id == llamada.expedients_id">Id: {{ llamada.nota_comuna }}</p>
-                                                                        <p v-if="expedient.id == llamada.expedients_id">Id: {{ llamada.expedients_id }}</p>
-                                                                        <p v-if="expedient.id == llamada.expedients_id">Id: {{ llamada.usuaris_id }}</p>
-                                                                        <p v-if="expedient.id == llamada.expedients_id">Id: {{ llamada.comarca }}</p>
-                                                                        <p v-if="expedient.id == llamada.expedients_id">Id: {{ llamada.tipus_incident }}</p>
-                                                                    </li>
-                                                                </ul> -->
-                                                                    <!-- <div v-if="cartes_trucades.expedients_id == expedients.id"> -->
-                                                                        <!-- <p>Id: {{ cartes_trucades.id }}</p> -->
-                                                                        <!-- <p>Id: {{ cartes_trucades.codi_trucada }}</p>
-                                                                        <p>Id: {{ cartes_trucades.data_hora }}</p>
-                                                                        <p>Id: {{ cartes_trucades.temps_trucada }}</p>
-                                                                        <p>Id: {{ cartes_trucades.dades_personals_id }}</p>
-                                                                        <p>Id: {{ cartes_trucades.telefon }}</p>
-                                                                        <p>Id: {{ cartes_trucades.procedencia_trucada }}</p>
-                                                                        <p>Id: {{ cartes_trucades.origen_trucada }}</p>
-                                                                        <p>Id: {{ cartes_trucades.nom_trucada }}</p>
-                                                                        <p>Id: {{ cartes_trucades.municipis_id_trucada }}</p>
-                                                                        <p>Id: {{ cartes_trucades.adreca_trucada }}</p>
-                                                                        <p>Id: {{ cartes_trucades.fora_catalunya }}</p>
-                                                                        <p>Id: {{ cartes_trucades.provincies_id }}</p>
-                                                                        <p>Id: {{ cartes_trucades.municipis_id }}</p>
-                                                                        <p>Id: {{ cartes_trucades.tipus_localitzacions_id }}</p>
-                                                                        <p>Id: {{ cartes_trucades.descripcio_localitzacio }}</p>
-                                                                        <p>Id: {{ cartes_trucades.detall_localitzacio }}</p>
-                                                                        <p>Id: {{ cartes_trucades.altres_ref_localitzacio }}</p>
-                                                                        <p>Id: {{ cartes_trucades.incidents_id }}</p>
-                                                                        <p>Id: {{ cartes_trucades.nota_comuna }}</p>
-                                                                        <p>Id: {{ cartes_trucades.expedients_id }}</p>
-                                                                        <p>Id: {{ cartes_trucades.usuaris_id }}</p>
-                                                                        <p>Id: {{ cartes_trucades.comarca }}</p>
-                                                                        <p>Id: {{ cartes_trucades.tipus_incident }}</p> -->
                                                                 </div>
                                                             </div>
                                                     <div class="row mt-5 mb-3">
-                                                        <hr>
+
                                                     </div>
-                                                    <h6 class="texto-modal pb-3">Agencias</h6>
-                                                    <div class="row mb-5">
-                                                        <div class="col">
-                                                            <label for="validationCustom01" class="form-label titulo mb-2">Asociadas a este Expediente</label>
-                                                            <div class="d-flex flex-wrap">
-                                                                <div v-for="llamada in cartes_trucades">
-                                                                    <div>
-                                                                        <a type="button" v-if="expedient.id == llamada.expedients_id" class="btn-mostrar btn btn-warning btn-sm d-flex align-items-center gap-1 border border-white" data-bs-toggle="modal" :data-bs-target="'#modal_cartaLlamada' + llamada.id"><span class="material-icons">visibility</span>{{ llamada.id }}</a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-dark btn-cerrar-modal" data-bs-dismiss="modal">Cancelar</button>
                                                         <button type="submit" class="btn btn-cancelar-modal ">Guardar</button>
@@ -193,6 +121,23 @@
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">`</button>
                                                 </div>
                                                 <div class="modal-body">
+                                                    <h6 class="texto-modal pb-3">Agencias</h6>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <label for="validationCustom01" class="form-label titulo mb-2">Asociadas a esta Carta de Llamada</label>
+                                                            <div class="d-flex flex-wrap">
+                                                                <div v-for="agencia in cartes_trucades_has_agencies">
+                                                                    <div>
+                                                                        <a type="button" v-if="llamada.id == agencia.cartes_trucades_id" class="btn-mostrar btn btn-warning btn-sm d-flex align-items-center gap-1 border border-white" data-bs-toggle="modal" :data-bs-target="'#modal_cartaLlamada' + llamada.id"><span class="material-icons">visibility</span>{{ agencia.agencies_id }}</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mt-5 mb-3">
+                                                        <hr>
+                                                    </div>
+                                                    <h6 class="texto-modal pb-3 mb-3">Datos Generales</h6>
                                                     <div class="row">
                                                         <div class="col-6">
                                                             <p><b>Id: </b>{{ llamada.id }}</p>
@@ -276,6 +221,7 @@ export default {
             expedients: '',
             selectedAtributo: false,
             cartes_trucades: null,
+            cartes_trucades_has_agencies: null,
             // cartes_trucades: {
             //     id: '',
             //     codi_trucada: '',
@@ -361,6 +307,15 @@ export default {
                 this.cartes_trucades = response.data;
 
                 JSON.parse(JSON.stringify(this.cartes_trucades));
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+        EventService.getHasAgencias()
+            .then((response) => {
+                this.cartes_trucades_has_agencies = response.data;
+
+                JSON.parse(JSON.stringify(this.cartes_trucades_has_agencies));
             })
             .catch((error) => {
                 console.log(error);
