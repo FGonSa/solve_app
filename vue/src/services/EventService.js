@@ -41,5 +41,8 @@ export default {
     getCartaLlamada(){
         return apiClient.get("cartes_trucades");
     },
+    getHasAgencias(){
+        return apiClient.get("cartes_trucades_has_agencies");
+    }
 
 };
