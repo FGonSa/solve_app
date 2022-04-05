@@ -118,8 +118,7 @@ export default {
             this.$emit("pagina-expedientes", this.isSuccess);
         },
         insertCarta() {
-            this.objeto.expedients_id
-            let idExp = 0
+            let idExp = 0;
 
             let me = this;
             if (
@@ -137,13 +136,13 @@ export default {
                     )
                     .then((response) => {
                         console.log("expediente registrado con exito");
-                        me.expedients_id = response
+                        me.objeto.expedients_id = pm.response
                     })
                     .catch((error) => {
                         console.log("erorr al insertar expediente");
                     });
             }
-let article = JSON.stringify(this.objeto);
+            let article = JSON.stringify(this.objeto);
             axios
                 .post(
                     "http://localhost/proyecto112/public/api/cartes_trucades",
