@@ -19,9 +19,9 @@ export default {
     data() {
 return {
     metadatos: {
-fecha: null,
-codigoLlamada: null,
-tiempo: null
+        fecha: null,
+        codigoLlamada: null,
+        tiempo: null,
     }
 }
     },
@@ -35,23 +35,22 @@ tiempo: null
             return this.metadatos.fecha = fechaYHora
         },
         generarCodigoLlamada(){
-             let caracteres = "abcdefghijkmnpqrtuvwxyzABCDEFGHJKMNPQRTUVWXYZ2346789";
-       let codigo = "";
-       let i = 0
-       for (i=0; i<20; i++) codigo +=caracteres.charAt(Math.floor(Math.random()*caracteres.length));
-       codigo = codigo.toUpperCase().substr(0,9)
-       return this.metadatos.codigoLlamada = codigo
+            let caracteres = "abcdefghijkmnpqrtuvwxyzABCDEFGHJKMNPQRTUVWXYZ2346789";
+            let codigo = "";
+            let i = 0
+            for (i=0; i<20; i++) codigo +=caracteres.charAt(Math.floor(Math.random()*caracteres.length));
+            codigo = codigo.toUpperCase().substr(0,9)
+            return this.metadatos.codigoLlamada = codigo
         },
     },
     created(){
-
-            var sec = 0;
-    function pad ( val ) { return val > 9 ? val : "0" + val; }
-    setInterval( function(){
-        document.getElementById("seconds").innerHTML=pad(++sec%60);
-        document.getElementById("minutes").innerHTML=pad(parseInt(sec/60,10));
-    }, 1000)
-    }
+        var sec = 0;
+        function pad ( val ) { return val > 9 ? val : "0" + val; }
+            setInterval( function(){
+                document.getElementById("seconds").innerHTML=pad(++sec%60);
+                document.getElementById("minutes").innerHTML=pad(parseInt(sec/60,10));
+            }, 1000)
+        }
 
 }
 </script>
