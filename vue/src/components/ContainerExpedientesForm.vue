@@ -86,7 +86,7 @@
                                                     <h6 class="texto-modal pb-3">Carta de Llamadas</h6>
                                                         <div class="row">
                                                             <div class="col">
-                                                                <label for="validationCustom01" class="form-label titulo mb-2">Asociadas a este Expediente</label>
+                                                                <label for="validationCustom01" class="form-label titulo mb-2">Id Carta Llamada</label>
                                                                 <div class="d-flex flex-wrap">
                                                                     <div v-for="llamada in cartes_trucades">
                                                                         <div>
@@ -97,7 +97,7 @@
 
                                                                 </div>
                                                             </div>
-                                                    <div class="row mt-5 mb-3">
+                                                        <div class="row mt-5 mb-3">
 
                                                     </div>
 
@@ -124,11 +124,11 @@
                                                     <h6 class="texto-modal pb-3">Agencias</h6>
                                                     <div class="row">
                                                         <div class="col">
-                                                            <label for="validationCustom01" class="form-label titulo mb-2">Asociadas a esta Carta de Llamada</label>
+                                                            <label for="validationCustom01" class="form-label titulo mb-2">Agencias Id</label>
                                                             <div class="d-flex flex-wrap">
                                                                 <div v-for="agencia in cartes_trucades_has_agencies">
                                                                     <div>
-                                                                        <a type="button" v-if="llamada.id == agencia.cartes_trucades_id" class="btn-mostrar btn btn-warning btn-sm d-flex align-items-center gap-1 border border-white" data-bs-toggle="modal" :data-bs-target="'#modal_cartaLlamada' + llamada.id"><span class="material-icons">visibility</span>{{ agencia.agencies_id }}</a>
+                                                                        <a type="button" v-if="llamada.id == agencia.cartes_trucades_id" class="btn-mostrar btn btn-warning btn-sm d-flex align-items-center gap-1 border border-white"><span class="material-icons">visibility</span>{{ agencia.agencies_id }}</a><!--  data-bs-toggle="modal"  :data-bs-target="'#agencia' + agencia.agencies_id" -->
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -181,15 +181,44 @@
                                                         </div>
                                                     </div>
 
-
-
-
                                                 </div>
                                                 <div class="modal-footer d-flex justify-content-start">
                                                     <button class="btn-mostrar btn btn-warning btn-sm d-flex align-items-center gap-1" data-bs-toggle="modal" :data-bs-target="'#exampleModal' + llamada.expedients_id"><span class="material-icons">chevron_left</span>Atrás</button>
                                                 </div>
                                             </div>
                                         </div>
+                                    <!-- modal agencias -->
+                                    <!-- <div v-for="agencia in agencies"> -->
+                                        <!-- modal bottones carta-llamada del otro modal -->
+                                        <!-- <div class="modal fade" :id="'#agencia' + agencia.id" tabindex="-1" aria-labelledby="modalHeader1" aria-hidden="true" data-bs-backdrop="static">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="modalHeader1">Agencia <b>{{ agencia.id }}</b></h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">`</button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <h6 class="texto-modal pb-3 mb-3">Datos Generales</h6>
+                                                        <div class="row">
+                                                            <div class="col-6"> -->
+                                                                <!-- <p><b>Id: </b>{{ llamada.id }}</p>
+                                                                <p><b>Código Llamada: </b>{{ llamada.codi_trucada }}</p>
+                                                                <p><b>Fecha: </b>{{ llamada.data_hora }}</p>
+                                                                <p><b>Tiempo Llamada: </b>{{ llamada.temps_trucada }}</p>
+                                                                <p><b>Datos Personales Id: </b>{{ llamada.dades_personals_id }}</p> -->
+                                                            <!-- </div>
+                                                            <div class="col-6"> -->
+                                                                <!-- <p><b>Telefono: </b>{{ llamada.telefon }}</p> -->
+                                                            <!-- </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer d-flex justify-content-start">
+                                                        <button class="btn-mostrar btn btn-warning btn-sm d-flex align-items-center gap-1" data-bs-toggle="modal" :data-bs-target="'hola'"><span class="material-icons">chevron_left</span>Atrás</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                    <!-- </div> -->
                                     </div>
                                 </div>
                             </td>
@@ -197,11 +226,9 @@
                     </tbody>
                 </table>
             </div>
-
             <div class="p-5 d-flex justify-content-center">
                 <small>&copy; Copyright 2022, Solve Solutions</small>
             </div>
-
     </div>
 </template>
 
@@ -222,6 +249,7 @@ export default {
             selectedAtributo: false,
             cartes_trucades: null,
             cartes_trucades_has_agencies: null,
+            agencies: null,
             // cartes_trucades: {
             //     id: '',
             //     codi_trucada: '',
@@ -316,6 +344,15 @@ export default {
                 this.cartes_trucades_has_agencies = response.data;
 
                 JSON.parse(JSON.stringify(this.cartes_trucades_has_agencies));
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+        EventService.getAgencias()
+            .then((response) => {
+                this.agencies = response.data;
+
+                JSON.parse(JSON.stringify(this.agencies));
             })
             .catch((error) => {
                 console.log(error);
