@@ -35,7 +35,7 @@
                             <td>
                                 <div class="d-flex justify-content-center gap-3 mx-5">
                                     <div>
-                                        <button class="btn-mostrar btn btn-warning btn-sm d-flex align-items-center gap-1" data-bs-toggle="modal" :data-bs-target="'#exampleModal' + expedient.id"><span class="material-icons">visibility</span>Mostrar</button>
+                                        <button class="btn-mostrar btn btn-warning btn-sm d-flex align-items-center gap-1" data-bs-toggle="modal" :data-bs-target="'#exampleModal' + expedient.id"><span class="material-icons">create</span>Editar</button>
                                     </div>
                                     <div>
                                         <button class="btn-mostrar btn btn-danger btn-sm d-flex align-items-center gap-1"><span class="material-icons">delete_forever</span></button>
