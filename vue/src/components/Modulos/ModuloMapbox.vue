@@ -41,7 +41,7 @@ export default {
       const mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
       mapboxClient.geocoding
 .forwardGeocode({
-query: "Oceania",
+query: "Pl. d'Urquinaona, 10, 08010 Barcelona",
 autocomplete: false,
 limit: 1
 })
