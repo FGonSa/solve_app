@@ -24,7 +24,7 @@
             <div class="col-lg-4">
                 <ModuloDatos />
                 <ModuloExp class="my-4" />
-                <ModuloMap class="my-4" />
+                <ModuloMapbox class="my-4" />
             </div>
         </div>
     </div>
@@ -41,6 +41,7 @@ import FormFinish from "../components/Tabs/FormFinish.vue";
 import ModuloExp from "../components/Modulos/ModuloExp.vue";
 import ModuloMap from "../components/Modulos/ModuloMap.vue";
 import ModuloDatos from "../components/Modulos/ModuloDatos.vue";
+import ModuloMapbox from "../components/Modulos/ModuloMapbox.vue";
 
 export default {
     name: "Consultas",
@@ -54,6 +55,7 @@ export default {
         ModuloExp,
         ModuloMap,
         ModuloDatos,
+        ModuloMapbox
     },
 
     data() {
