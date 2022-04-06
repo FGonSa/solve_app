@@ -43,7 +43,7 @@ return {
             return this.metadatos.codigoLlamada = codigo
         },
     },
-    created(){
+    mounted(){
         var sec = 0;
         function pad ( val ) { return val > 9 ? val : "0" + val; }
             setInterval( function(){
@@ -51,6 +51,7 @@ return {
                 document.getElementById("minutes").innerHTML=pad(parseInt(sec/60,10));
             }, 1000)
         }
+
 
 }
 </script>

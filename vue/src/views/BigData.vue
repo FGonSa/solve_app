@@ -1,6 +1,19 @@
 <template>
 	<main id="pagina-bigData">
 		<h1>Big Data</h1>
-		<p>This is the big data page</p>
+		<DataChart></DataChart>
 	</main>
 </template>
+
+<script>
+import DataChart from "../components/Data.vue";
+
+export default {
+    name: "Big Data",
+    components: {
+        DataChart,
+    },
+    data(){
+        return {}
+    }}
+</script>
