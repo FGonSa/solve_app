@@ -22,8 +22,8 @@
                 </TabsWrapper>
             </div>
             <div class="col-lg-4">
-                <ModuloDatos />
-                 <ModuloMapbox class="my-4" :direccion="cartaLlamada.adreca_trucada + ','+cartaLlamada.procedencia_trucada"/>
+                <ModuloDatos @padre-datos-llamada="getModuloDatos"/>
+                <ModuloMapbox class="my-4" :direccion="cartaLlamada.adreca_trucada + ','+cartaLlamada.procedencia_trucada"/>
                 <ModuloExp class="my-4" />
 
             </div>
@@ -62,7 +62,7 @@ export default {
     data() {
         return {
             cartaLlamada: {
-                codi_trucada: "algo",
+                codi_trucada: "",
                 data_hora: null,
                 temps_trucada: null,
                 dades_personals_id: 2,
@@ -97,25 +97,20 @@ export default {
         getDatosPrincipales(datosPrincipales) {
             this.cartaLlamada.telefono = datosPrincipales.telefono;
             this.cartaLlamada.nom_trucada = datosPrincipales.nom_trucada;
-            this.cartaLlamada.municipis_id_trucada =
-                datosPrincipales.municipis_id_trucada;
-            this.cartaLlamada.procedencia_trucada =
-                datosPrincipales.procedencia_trucada;
+            this.cartaLlamada.municipis_id_trucada = datosPrincipales.municipis_id_trucada;
+            this.cartaLlamada.procedencia_trucada = datosPrincipales.procedencia_trucada;
             this.cartaLlamada.origen_trucada = datosPrincipales.origen_trucada;
             this.cartaLlamada.adreca_trucada = datosPrincipales.adreca_trucada;
         },
         getLocalizacion(localizacion) {
-
             this.cartaLlamada.fora_catalunya = localizacion.foraCat;
             this.cartaLlamada.provincies_id = localizacion.provinciaSelect;
             this.cartaLlamada.municipis_id = localizacion.municipioSelect;
-            this.cartaLlamada.comarca_id = localizacion.comarcaSelect;
-            this.cartaLlamada.tipus_localitzacions_id =
-                localizacion.localizacion;
-            this.cartaLlamada.descripcio_localitzacio =
-                localizacion.descripcion;
+            this.cartaLlamada.tipus_localitzacions_id = localizacion.localizacion;
+            this.cartaLlamada.descripcio_localitzacio = localizacion.descripcion;
             this.cartaLlamada.detall_localitzacio = localizacion.detalle;
             this.cartaLlamada.altres_ref_localitzacio = localizacion.otrasRef;
+            this.cartaLlamada.comarca_id = localizacion.comarcaSelect;
         },
         getTipificacion(tipificacion) {
             this.cartaLlamada.incidents_id = tipificacion.incidente;
@@ -123,9 +118,14 @@ export default {
                 tipificacion.tipo_incidente;
         },
         getFinalizacion(finalizacion) {
-            this.cartaLlamada.como_cerrar_carta =
-                finalizacion.como_cerrar_carta;
+            this.cartaLlamada.como_cerrar_carta = finalizacion.como_cerrar_carta;
             this.cartaLlamada.nota_comuna = finalizacion.nota_comuna;
+        },
+        getModuloDatos(moduloDatos) {
+            // this.cartaLlamada.codi_trucada = moduloDatos.como_cerrar_carta;
+            this.cartaLlamada.data_hora = moduloDatos.fecha;
+            this.cartaLlamada.codi_trucada = moduloDatos.codigoLlamada;
+            this.cartaLlamada.temps_trucada = moduloDatos.tiempo;
         },
     },
 };
