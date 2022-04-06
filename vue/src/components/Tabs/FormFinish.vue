@@ -14,13 +14,11 @@
                         <option value="crear_expediente_nuevo" selected>
                             Crear expediente nuevo
                         </option>
-
-                        <option value="crear_expediente_recomendado">
-                            Crear expediente nuevo con recomendación
-                        </option>
-
                         <option value="asociar_expediente">
                             Asociar expediente existente
+                        </option>
+                        <option value="crear_expediente_recomendado" disabled>
+                            Crear expediente nuevo con recomendación
                         </option>
                     </select>
 
@@ -38,7 +36,7 @@
 
                         <select
                             class="form-select"
-                            @blur="getLocalizacion(datosPrincipales)"
+                            @blur="getFinalizacion(finalizacion)"
                             v-model="estats_expedients_id"
                         >
                             <option
@@ -47,6 +45,31 @@
                                 :key="estado.id"
                             >
                                 {{ estado.estat }}
+                            </option>
+                        </select>
+                    </div>
+                    <div
+                        class="col-md-12 mt-4"
+                        v-if="
+                            finalizacion.como_cerrar_carta ==
+                            'asociar_expediente'
+                        "
+                    >
+                        <label for="validationCustom01" class="form-label"
+                            >Selecciona el expediente:</label
+                        >
+
+                        <select
+                            class="form-select"
+                            @blur="getFinalizacion(finalizacion)"
+                            v-model="finalizacion.expediente_id_select"
+                        >
+                            <option
+                                v-for="exp in expedients"
+                                :value="exp.id"
+                                :key="exp.id"
+                            >
+                                {{ exp.id }}
                             </option>
                         </select>
                     </div>
@@ -87,13 +110,15 @@ export default {
     props: ["cartaLlamada"],
     data() {
         return {
+            expediente_estado_form: '',
             estados: null,
             estats_expedients_id: null,
             isSuccess: null,
             finalizacion: {
                 como_cerrar_carta: null,
-                nota_comuna:
-                    "Relación con el incidente: \nDescripción del suceso: \nComentario extra a añadir:",
+                nota_comuna: "Relación con el incidente:  \nDescripción del suceso:  \nComentario extra a añadir:  ",
+                expediente_id_select: null,
+                mostrarAlert: false,
             },
             objeto: this.cartaLlamada,
             // prueba: {"codi_trucada":"algo","data_hora":null,"temps_trucada":null,"dades_personals_id":2,"telefono":"666","nom_trucada":"IAGO","municipis_id_trucada":18,"procedencia_trucada":"SADSA","origen_trucada":"SADSA","adreca_trucada":"SADAS","fora_catalunya":0,"provincies_id":1,"municipis_id":16,"comarca_id":18,"tipus_localitzacions_id":"2","descripcio_localitzacio":"SADAS","detall_localitzacio":"SASDASDASS","altres_ref_localitzacio":"SASAD","incidents_id":18,"tipus_incidents_descripcio":1,"como_cerrar_carta":"asociar_expediente","nota_comuna":"Relación con el incidente: \nDescripción del suceso: \nComentario extra a añadir:","expedients_id":2,"usuaris_id":1},
@@ -105,6 +130,15 @@ export default {
                 this.estados = response.data;
 
                 JSON.parse(JSON.stringify(this.estados));
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+        EventService.getExpedientes()
+            .then((response) => {
+                this.expedients = response.data;
+
+                JSON.parse(JSON.stringify(this.expedients));
             })
             .catch((error) => {
                 console.log(error);
@@ -139,7 +173,7 @@ export default {
                         me.objeto.expedients_id = pm.response
                     })
                     .catch((error) => {
-                        console.log("erorr al insertar expediente");
+                        console.log("error al insertar expediente");
                     });
             }
             let article = JSON.stringify(this.objeto);
@@ -162,10 +196,14 @@ export default {
                 })
                 .catch((error) => {
                     this.isSuccess = false;
-                    alert(
-                        "ERROR! No se ha podido insertar la carta. Compruebe que los datos son correctos."
-                    );
+                    this.holaAlert();
                 });
+        },
+        holaAlert(){
+            alert(
+                        "Error S8S. El formulario no ha podido enviarse, revise los datos."
+                    );
+            // this.finalizacion.mostrarAlert = true;
         },
     },
 };
