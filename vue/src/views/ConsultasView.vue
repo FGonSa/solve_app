@@ -23,8 +23,9 @@
             </div>
             <div class="col-lg-4">
                 <ModuloDatos />
+                 <ModuloMapbox class="my-4" :direccion="cartaLlamada.adreca_trucada + ','+cartaLlamada.procedencia_trucada"/>
                 <ModuloExp class="my-4" />
-                <ModuloMapbox class="my-4" />
+
             </div>
         </div>
     </div>
