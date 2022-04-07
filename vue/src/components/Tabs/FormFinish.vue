@@ -126,7 +126,7 @@ export default {
             ) {
                 axios
                     .post(
-                        "http://localhost/proyecto112/public/api/expedients",
+                        "http://localhost:8080/proyecto112/public/api/expedients",
                         me,
                         {
                             headers: {
@@ -145,8 +145,8 @@ export default {
             let article = JSON.stringify(this.objeto);
             axios
                 .post(
-                    "http://localhost/proyecto112/public/api/cartes_trucades",
-                    // "http://localhost:8080/proyecto112/public/api/cartes_trucades",
+                    // "http://localhost/proyecto112/public/api/cartes_trucades",
+                    "http://localhost:8080/proyecto112/public/api/cartes_trucades",
                     article,
                     {
                         headers: {
