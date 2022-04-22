@@ -1,7 +1,7 @@
 <template>
     <div class="player">
         <div class="player__sizer">
-                <video ref="videoPlayer" @play="setCurTime(5)">
+                <video ref="videoPlayer" @play="setCurTime(this.tiempoI)">
                     <source type="video/mp4" src="../../public/assets/video.mp4" />
                 </video>
                 <div class="position-absolute">
@@ -75,10 +75,12 @@
 
 <script>
 export default {
+    props: ['tiempoInicio'],
     data: function () {
     return {
       tiempo: null,
       play1: false,
+      tiempoI: this.tiempoInicio,
     }
   },
   methods: {
