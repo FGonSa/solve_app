@@ -44,7 +44,7 @@ export default {
     getHasAgencias(){
         return apiClient.get("cartes_trucades_has_agencies");
     },
-    getIncidents(){
+    getIncidentes(){
         return apiClient.get("count");
     }
 
