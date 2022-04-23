@@ -1,9 +1,11 @@
 <template>
-  <DoughnutChart
-    :chart-data="data"
-    :options="options"
-    css-classes="chart-container"
-  />
+    <div class="div-donut container-fluid p-5">
+        <DoughnutChart
+            :chart-data="data"
+            :options="options"
+            css-classes="chart-container"
+        />
+    </div>
 </template>
 
 <script setup>
@@ -43,3 +45,11 @@ const options = ref({
 
 
 </script>
+
+<style lang="scss" scoped>
+.div-donut{
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+}
+</style>

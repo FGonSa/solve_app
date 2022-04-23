@@ -1,6 +1,6 @@
 <template>
 	<main id="pagina-bigData">
-		<h1>Big Data</h1>
+		<!-- <h1>Big Data</h1> -->
 		<Donut></Donut>
 	</main>
 </template>
