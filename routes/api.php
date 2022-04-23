@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\AgenciaController;
 use App\Http\Controllers\Api\CartaHasAgenciaController;
 use App\Http\Controllers\Api\CartaTrucadaController;
 use App\Http\Controllers\Api\ComarcaController;
+use App\Http\Controllers\Api\CountIncident;
 use App\Http\Controllers\Api\DatosPersonalesController;
 use App\Http\Controllers\Api\EstadoAgenciaController;
 use App\Http\Controllers\Api\EstatExpedientsController;
@@ -49,5 +50,6 @@ Route::apiResource('expedients', Expediente::class);
 Route::apiResource('estats_expedients', EstatExpedientsController::class);
 Route::apiResource('cartes_trucades', CartaTrucadaController::class);
 Route::apiResource('cartes_trucades_has_agencies', CartaHasAgenciaController::class);
+Route::apiResource('count', CountIncident::class);
 
 

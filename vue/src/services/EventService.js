@@ -2,8 +2,8 @@ import axios from 'axios'
 
 
 const apiClient = axios.create({
-    // baseURL: 'http://localhost/proyecto112/public/api/',
-    baseURL: 'http://localhost:8080/proyecto112/public/api/',
+    baseURL: 'http://localhost/proyecto112/public/api/',
+    // baseURL: 'http://localhost:8080/proyecto112/public/api/',
     withCredentials: false,
     headers: {
         Accept: 'application/json',
@@ -43,6 +43,9 @@ export default {
     },
     getHasAgencias(){
         return apiClient.get("cartes_trucades_has_agencies");
+    },
+    getIncidents(){
+        return apiClient.get("count");
     }
 
 };
