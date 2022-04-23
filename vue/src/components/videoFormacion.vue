@@ -49,20 +49,20 @@
                             x2
                         </button>
                     </div>
-                    <div v-if="this.tiempo >= 10" class="d-flex gap-2">
-                        <button type="button" class="btn-style btn btn-sm " @click="selectedTitle = title">
+                    <div v-if="this.tiempo == this.tiempoParar" class="d-flex gap-2">
+                        <button type="button" class="btn-style btn btn-sm ">
                             Recepción
                         </button>
-                        <button type="button" class="btn-style btn btn-sm " @click="setSpeed(0.5)">
+                        <button type="button" class="btn-style btn btn-sm ">
                             Identificación
                         </button>
-                        <button type="button" class="btn-style btn btn-sm" @click="setSpeed(1)">
+                        <button type="button" class="btn-style btn btn-sm">
                             Tipificación
                         </button>
-                        <button type="button" class="btn-style btn btn-sm" @click="setSpeed(1.5)">
+                        <button type="button" class="btn-style btn btn-sm">
                             Localización
                         </button>
-                        <button type="button" class="btn-style btn btn-sm" @click="setSpeed(2)">
+                        <button type="button" class="btn-style btn btn-sm">
                             Expediente
                         </button>
                     </div>
@@ -75,21 +75,29 @@
 
 <script>
 export default {
-    props: ['tiempoInicio'],
+    props: ['tiempoInicio', 'tiempo5', 'tiempoParar', 'tiempoM5'],
     data: function () {
     return {
       tiempo: null,
       play1: false,
       tiempoI: this.tiempoInicio,
+      tiempo5: this.tiempo5,
+      tiempoParar: this.tiempoParar,
+      tiempoM5: this.tiempoM5,
     }
   },
   methods: {
     play() {
-      this.$refs.videoPlayer.play();
-      setInterval(() => {
-        this.tiempo = this.$refs.videoPlayer.currentTime;
-        this.tiempo = parseInt(this.tiempo);
-      }, 1000);
+        if (this.tiempo != this.tiempoParar) {
+        this.$refs.videoPlayer.play();
+            setInterval(() => {
+                this.tiempo = this.$refs.videoPlayer.currentTime;
+                this.tiempo = parseInt(this.tiempo);
+            if (this.tiempo == this.tiempoParar) {
+                this.$refs.videoPlayer.pause();
+            }
+            }, 1000);
+        }
     },
     pause() {
       this.$refs.videoPlayer.pause();
@@ -97,18 +105,22 @@ export default {
     stop() {
       const { videoPlayer } = this.$refs;
       videoPlayer.pause();
-      videoPlayer.currentTime = 0;
+      videoPlayer.currentTime = this.tiempoI;
     },
     setSpeed(speed) {
       this.$refs.videoPlayer.playbackRate = speed;
     },
     avanzar() {
       const { videoPlayer } = this.$refs;
-      videoPlayer.currentTime += 10;
+      if (videoPlayer.currentTime > this.tiempoI && videoPlayer.currentTime <= this.tiempoM5) {
+            videoPlayer.currentTime += 5;
+      }
     },
     retroceder() {
       const { videoPlayer } = this.$refs;
-      videoPlayer.currentTime -= 10;
+      if (videoPlayer.currentTime > this.tiempo5) {
+            videoPlayer.currentTime -= 5;
+      }
     },
     setCurTime(punto) {
         if(this.play1 === false){
@@ -116,7 +128,7 @@ export default {
             videoPlayer.currentTime = punto;
             this.play1 = true;
         }
-    }
+    },
   },
 };
 </script>

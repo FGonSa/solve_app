@@ -3,10 +3,12 @@
             <div class="col-lg-6 p-5">
                 <h1 class="titulo-color-blue"><b>4. Localización</b></h1>
                 <h1 class="titulo-color-dark mb-4"><b>del incidente</b></h1>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p>La localización será donde completarás los datos de origen del suceso y donde se encuentran los afectados del incidente.</p>
+                <p> - Localizar Incidente.</p>
+                <p> - Completar datos faltantes.</p>
             </div>
             <div class="col-lg-6 p-5">
-                <VideoFormacion tiempoInicio="25"/>
+                <VideoFormacion tiempoInicio="66" tiempo5="71"  tiempoParar="110" tiempoM5="105"/>
             </div>
         </form>
 </template>

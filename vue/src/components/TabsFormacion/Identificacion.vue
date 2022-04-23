@@ -2,11 +2,15 @@
         <form class="row g-3 needs-validation" >
             <div class="col-lg-6 p-5">
                 <h1 class="titulo-color-blue"><b>2. Identificación</b></h1>
-                <h1 class="titulo-color-dark mb-4"><b>de la emergencia</b></h1>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <h1 class="titulo-color-dark mb-5"><b>de la emergencia</b></h1>
+                <p>La identificación de la emergencia será para poder identificar el origen de la emergéncia.</p>
+                <p> - Procedimiento Especifico.</p>
+                <p> - Llamada Asociada.</p>
+                <p> - Ampliación, Reclamación, Anulación.</p>
+                <p> - Completar datos faltantes.</p>
             </div>
             <div class="col-lg-6 p-5">
-                <VideoFormacion tiempoInicio="15"/>
+                <VideoFormacion tiempoInicio="17" tiempo5="22"  tiempoParar="41" tiempoM5="36"/>
             </div>
         </form>
 </template>

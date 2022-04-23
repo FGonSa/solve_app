@@ -3,10 +3,12 @@
             <div class="col-lg-6 p-5">
                 <h1 class="titulo-color-blue"><b>3. Tipificación</b></h1>
                 <h1 class="titulo-color-dark mb-4"><b>del incidente</b></h1>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p>La tipificación será donde indicarás el tipo de incidente y que especificacion tiene. También se adjuntarán las agencias mas cercanas para dicho suceso.</p>
+                <p> - Validar NC.</p>
+                <p> - Completar datos faltantes.</p>
             </div>
             <div class="col-lg-6 p-5">
-                <VideoFormacion tiempoInicio="20"/>
+                <VideoFormacion tiempoInicio="43" tiempo5="48"  tiempoParar="64" tiempoM5="59"/>
             </div>
         </form>
 </template>
