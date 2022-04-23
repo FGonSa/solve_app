@@ -39,7 +39,7 @@ Las secciones creadas hasta la fecha de hoy son, Inicio, Carta de Llamadas, Gest
 * HTML/CSS
 * Bootstrap
 
-### Participantes:
+## Participantes:
 
 Francisco Santos: 
     - Github -> https://github.com/FGonSa
