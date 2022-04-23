@@ -3,7 +3,7 @@
             <div class="col-lg-6 p-5">
                 <h1 class="titulo-color-blue"><b>2. Identificación</b></h1>
                 <h1 class="titulo-color-dark mb-5"><b>de la emergencia</b></h1>
-                <p>La identificación de la emergencia será para poder identificar el origen de la emergéncia.</p>
+                <p>Consiste en identificar el origen de la emergéncia y su procedencia terrenal.</p>
                 <p> - Procedimiento Especifico.</p>
                 <p> - Llamada Asociada.</p>
                 <p> - Ampliación, Reclamación, Anulación.</p>

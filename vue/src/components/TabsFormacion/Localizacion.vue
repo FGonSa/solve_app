@@ -3,7 +3,7 @@
             <div class="col-lg-6 p-5">
                 <h1 class="titulo-color-blue"><b>4. Localización</b></h1>
                 <h1 class="titulo-color-dark mb-4"><b>del incidente</b></h1>
-                <p>La localización será donde completarás los datos de origen del suceso y donde se encuentran los afectados del incidente.</p>
+                <p>Señalaremos los datos de origen del suceso y dónde se encuentran los afectados del incidente.</p>
                 <p> - Localizar Incidente.</p>
                 <p> - Completar datos faltantes.</p>
             </div>

@@ -3,7 +3,7 @@
             <div class="col-lg-6 p-5">
                 <h1 class="titulo-color-blue"><b>3. Tipificación</b></h1>
                 <h1 class="titulo-color-dark mb-4"><b>del incidente</b></h1>
-                <p>La tipificación será donde indicarás el tipo de incidente y que especificacion tiene. También se adjuntarán las agencias mas cercanas para dicho suceso.</p>
+                <p>En este apartado precisaremos el tipo de incidente y qué especificación tiene. También se adjuntarán las agencias cercanas que puedan ser vitales para su resolución.</p>
                 <p> - Validar NC.</p>
                 <p> - Completar datos faltantes.</p>
             </div>

@@ -3,7 +3,7 @@
             <div class="col-lg-6 p-5">
                 <h1 class="titulo-color-blue"><b>1. Recepción</b></h1>
                 <h1 class="titulo-color-dark mb-5"><b>de la llamada</b></h1>
-                <p>La recepción de la llamada son los pasos que tendás que seguir para identificar si una llamada es procedente o no.</p>
+                <p>Seguiremos una serie de pasos para identificar si una llamada es procedente o no.</p>
                 <p> - Saludación inicial.</p>
                 <p> - Identificación de la Llamada.</p>
                 <p> - Completar datos faltantes.</p>

@@ -3,7 +3,7 @@
             <div class="col-lg-6 p-5">
                 <h1 class="titulo-color-blue"><b>5. Expediente</b></h1>
                 <h1 class="titulo-color-dark mb-4"><b>finalización + despacho</b></h1>
-                <p>El expediente tendrá que asociarse a la carta de llamada, por lo tanto una vez que hayas compeltado el formulario dirigete a avisar Coord/Spv para poder dar como finalizada la acción.<br>Una vez se haya completado la carta de llamada, el supervisor podrá ver los datos del expediente con todas sus cartas de llamadas asociadas.</p>
+                <p>El  último paso consiste en asociar la carta de llamada a un expediente. Una vez finalizado el formulario, debemos avisar a un supervisor para poder dar como finalizada la acción.<br><br>Completada la carta de llamada, el supervisor podrá consultar los datos del expediente con todas sus cartas de llamadas asociadas.</p>
                 <p> - Finalizar Formulario.</p>
                 <p> - Notificar.</p>
                 <p> - Gestion Expedientes.</p>
