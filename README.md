@@ -10,7 +10,7 @@
 La aplicación contiene diferentes secciones, en las cuales podemos ver y gestionar datos.
 Las secciones creadas hasta la fecha de hoy son, Inicio, Carta de Llamadas, Gestión de Expedientes, Formación, Perfil y visualización de datos mediante Gráficos.
 
-* Inicio
+#### Inicio
 ![image](https://user-images.githubusercontent.com/91599970/164946370-2303946e-010f-4639-aa54-3f3339ad366c.png)
 
 * Carta de Llamada
