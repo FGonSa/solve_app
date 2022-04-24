@@ -2,13 +2,19 @@
 
 ## Synopsis
 
-* El proyecto ha sido realizado para un centro educativo con el que los estudiantes pueden hacer uso de la app del 112 sin tener que usar la aplicación real.
-* Estado Proyecto: acabado
+* El proyecto consiste en un simulador de llamadas de emergencia para técnicos en proceso de formación del 112.
+
+* Cliente: Institut Moisès Broggi
+
+* Estado del Proyecto: terminada la versión 2.0.
 
 ## Contenido
 
-La aplicación contiene diferentes secciones, en las cuales podemos ver y gestionar datos.
-Las secciones creadas hasta la fecha de hoy son, Inicio, Carta de Llamadas, Gestión de Expedientes, Formación, Perfil y visualización de datos mediante Gráficos.
+* La aplicación ha sido creada utilizando un entorno de programación reactivo para un procesado más eficiente y dinámico de los datos. Podemos registrar y gestionar cartas de llamada, así como sus expedientes. Cuenta con conexión a renderizado de gráficos y geolocalización de mapas. A su vez, ofrece una plataforma de formación mediante videos por si en algún momento el alumnado no sabe cómo utilizarla. Ofrece sistema de personalización.
+
+* Las secciones creadas hasta la fecha de hoy son: Inicio, Carta de Llamadas, Gestión de Expedientes, Formación, Perfil y Visualización de Datos mediante Gráficos.
+
+* Diseño responsive.
 
 ### Visual:
 
@@ -37,7 +43,7 @@ Las secciones creadas hasta la fecha de hoy son, Inicio, Carta de Llamadas, Gest
 * Vue 3
 * Laravel 8
 * MySQL
-* JavaScript
+* JavaScript ECMA6
 * HTML/CSS
 * Bootstrap 5
 * Postman API
