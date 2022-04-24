@@ -34,16 +34,19 @@ Las secciones creadas hasta la fecha de hoy son, Inicio, Carta de Llamadas, Gest
 
 ## Lenguajes y herramientas utilizadas:
 
-* Vue
-* Laravel
-* MySql
+* Vue 3
+* Laravel 8
+* MySQL
 * JavaScript
 * HTML/CSS
-* Bootstrap
+* Bootstrap 5
+* Postman API
+* Chart.js
+* Mapbox
 
 ## Participantes:
 
-Francisco Santos: 
+Frank Santos: 
     - Github -> https://github.com/FGonSa
     - Linkedin -> https://www.linkedin.com/in/francisco-javier-gonz%C3%A1lez-14758b198/
 
