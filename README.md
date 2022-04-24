@@ -8,6 +8,8 @@
 
 * Estado del Proyecto: terminada la versión 2.0.
 
+* Cambios respecto a la versión anterior: añadidas las secciones de Formación y Big-Data. Solventados algunos errores anteriores.
+
 ## Contenido
 
 * La aplicación ha sido creada utilizando un entorno de programación reactivo para un procesado más eficiente y dinámico de los datos. Podemos registrar y gestionar cartas de llamada, así como sus expedientes. Cuenta con conexión a renderizado de gráficos y geolocalización de mapas. A su vez, ofrece una plataforma de formación mediante videos por si en algún momento el alumnado no sabe cómo utilizarla. Ofrece sistema de personalización.
