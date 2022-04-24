@@ -2,7 +2,7 @@
 
 ## Synopsis
 
-* El proyecto consiste en un simulador de llamadas de emergencia para técnicos en proceso de formación del 112.
+* El proyecto consiste en un simulador de llamadas de emergencia para técnicos en proceso de formación del 112, sistema de emergencias de Cataluña.
 
 * Cliente: Institut Moisès Broggi
 
